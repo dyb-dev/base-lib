@@ -1,0 +1,58 @@
+{
+    "name": "@dyb-dev/eslint-config",
+    "version": "0.0.4",
+    "description": "Eslint 配置",
+    "author": "dyb-dev",
+    "license": "MIT",
+    "type": "module",
+    "private": false,
+    "main": "./index.cjs",
+    "exports": {
+        ".": {
+            "require": "./index.cjs"
+        }
+    },
+    "files": [
+        "index.cjs",
+        "package.json",
+        "README.md"
+    ],
+    "engines": {
+        "node": ">=18.0.0",
+        "pnpm": ">=8.15.5"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dyb-dev/base-lib/dyb-eslint-config"
+    },
+    "keywords": [
+        "eslint",
+        "eslint-config",
+        "eslint-plugin",
+        "eslint-config-prettier",
+        "prettier",
+        "eslint-plugin-import",
+        "eslint-plugin-vue",
+        "@typescript-eslint/eslint-plugin"
+    ],
+    "devDependencies": {
+        "eslint": "^8.57.0",
+        "typescript": "^5.4.5"
+    },
+    "dependencies": {
+        "@typescript-eslint/eslint-plugin": "^6.2.1",
+        "@typescript-eslint/parser": "^6.2.1",
+        "eslint-import-resolver-typescript": "^3.6.1",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-jsdoc": "^48.2.3",
+        "eslint-plugin-jsonc": "^2.15.1",
+        "eslint-plugin-vue": "^9.25.0"
+    },
+    "peerDependencies": {
+        "eslint": "^8.0.0"
+    }
+}

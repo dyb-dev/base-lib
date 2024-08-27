@@ -11,6 +11,9 @@ importers:
       '@dyb-dev/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
+      '@dyb-dev/prettier-config':
+        specifier: workspace:*
+        version: link:packages/prettier-config
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -57,6 +60,12 @@ importers:
       typescript:
         specifier: ^5.4.5
         version: 5.5.4
+
+  packages/prettier-config:
+    devDependencies:
+      prettier:
+        specifier: ^3.3.2
+        version: 3.3.3
 
 packages:
 

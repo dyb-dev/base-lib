@@ -1,6 +1,6 @@
 {
     "name": "@dyb-dev/eslint-config",
-    "version": "0.0.4",
+    "version": "0.0.8",
     "description": "Eslint 配置",
     "author": "dyb-dev",
     "license": "MIT",
@@ -27,7 +27,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/dyb-dev/base-lib/dyb-eslint-config"
+        "url": "https://github.com/dyb-dev/base-lib"
+    },
+    "homepage": "https://github.com/dyb-dev/base-lib/tree/main/packages/eslint-config",
+    "bugs": {
+        "url": "https://github.com/dyb-dev/base-lib/issues",
+        "directory": "https://github.com/dyb-dev/base-lib/tree/main/packages/eslint-config"
     },
     "keywords": [
         "eslint",

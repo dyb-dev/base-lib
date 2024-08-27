@@ -2,6 +2,8 @@
 
 `@dyb-dev/eslint-config` 是一个全面的 ESLint 配置包，支持 JavaScript、TypeScript、Vue、Jsonc、JsDoc格式化检查。此包旨在为你的项目提供统一和一致的编码风格。
 
+> ⚠️ 注意：此配置包只支持 CommonJS 规范，请确保你的 ESLint 配置文件遵循 CommonJS 规范。
+
 ## 安装
 
 使用以下命令安装此包，具体取决于你使用的包管理器：
@@ -19,13 +21,25 @@ yarn add @dyb-dev/eslint-config -D
 
 ## 使用方法
 
-在你的 ESLint 配置文件中扩展此配置。你可以在 .eslintrc 或 .eslintrc.cjs 文件中进行配置：
+在你的 ESLint 配置文件中扩展此配置。你可以在 `.eslintrc` 或 `.eslintrc.cjs` 文件中进行配置：
 
-.eslintrc 文件示例
+`.eslintrc` 文件示例
 
 ```json
 {
-    "extends": ["@dyb-dev/eslint-config"]
+    "extends": [
+        "@dyb-dev/eslint-config"
+    ]
+}
+```
+
+`.eslintrc.cjs` 文件示例
+
+```js
+module.exports = {
+    extends: [
+        "@dyb-dev/eslint-config"
+    ]
 }
 ```
 
@@ -36,3 +50,9 @@ yarn add @dyb-dev/eslint-config -D
 -   **Vue 文件格式化**: 内置对 Vue 文件的支持，确保你的 Vue 组件代码风格统一。
 -   **Jsonc 文件格式化**: 支持 JSON with Comments 格式的文件格式化。
 -   **JsDoc 格式化**: 确保你的代码注释符合规范，提升代码可读性。
+
+## 常见问题
+
+### 安装包后无法使用格式化
+
+如果在安装 @dyb-dev/eslint-config 后无法使用格式化功能，可能是因为编辑器尚未加载新的配置。解决方法是 重启 编辑器，然后重新尝试格式化操作。

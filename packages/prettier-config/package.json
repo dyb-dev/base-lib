@@ -1,0 +1,50 @@
+{
+    "name": "@dyb-dev/prettier-config",
+    "version": "0.0.1",
+    "description": "Prettier 配置",
+    "author": "dyb-dev",
+    "license": "MIT",
+    "type": "module",
+    "private": false,
+    "main": "./index.cjs",
+    "module": "./index.mjs",
+    "exports": {
+        ".": {
+            "require": "./index.cjs",
+            "import": "./index.mjs"
+        }
+    },
+    "files": [
+        "index.cjs",
+        "index.mjs",
+        "package.json",
+        "README.md"
+    ],
+    "engines": {
+        "node": ">=18.0.0",
+        "pnpm": ">=8.15.5"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dyb-dev/base-lib"
+    },
+    "homepage": "https://github.com/dyb-dev/base-lib/tree/main/packages/prettier-config",
+    "bugs": {
+        "url": "https://github.com/dyb-dev/base-lib/issues",
+        "directory": "https://github.com/dyb-dev/base-lib/tree/main/packages/prettier-config"
+    },
+    "keywords": [
+        "prettier",
+        "prettier-config"
+    ],
+    "devDependencies": {
+        "prettier": "^3.3.2"
+    },
+    "peerDependencies": {
+        "prettier": "^3.3.2"
+    }
+}

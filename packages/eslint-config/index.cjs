@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-08-21 12:17:43
  * @LastEditors: dyb-dev
- * @LastEditTime: 2024-08-27 21:07:00
+ * @LastEditTime: 2024-08-28 20:32:35
  * @FilePath: /base-lib/packages/eslint-config/index.cjs
  * @Description: Eslint 配置
  */
@@ -23,7 +23,7 @@ module.exports = {
     overrides: [
         {
             // #region CODE: eslint 基础配置
-            files: ["**/*.*js", "**/*.ts", "**/*.vue", "**/*.tsx", "**/*.json", "**/*.jsonc"],
+            files: ["**/*.*js", "**/*.ts", "**/*.vue", "**/*.jsx", "**/*.tsx", "**/*.json", "**/*.jsonc"],
             extends: [
                 // 继承ESLint官方推荐的规则
                 "eslint:recommended",

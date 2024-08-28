@@ -13,6 +13,7 @@
     "devDependencies": {
         "@dyb-dev/eslint-config": "workspace:*",
         "@dyb-dev/prettier-config": "workspace:*",
+        "@dyb-dev/stylelint-config": "workspace:*",
         "eslint": "^8.57.0",
         "prettier": "^3.3.2",
         "prettier-eslint": "^16.3.0",

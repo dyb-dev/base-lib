@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-08-28 14:32:57
  * @LastEditors: dyb-dev
- * @LastEditTime: 2024-08-28 14:50:41
+ * @LastEditTime: 2024-08-28 20:10:08
  * @FilePath: /base-lib/packages/stylelint-config/index.cjs
  * @Description: Stylelint 配置
  */
@@ -10,8 +10,8 @@
 module.exports = {
     // 全局默认严重程度
     defaultSeverity: "error",
-    // 指定全局解析器，比如支持scss，需要指定postcss-scss
-    customSyntax: "postcss-scss",
+    // 全局解析器
+    customSyntax: "postcss",
     // 是否允许stylelint-disable注释忽略规则
     ignoreDisables: false,
     // 是否允许在使用stylelint-disable注释时强制添加描述
@@ -27,13 +27,7 @@ module.exports = {
     // 插件 （包名）
     plugins: ["stylelint-order"],
     // 继承规则 （包名）"stylelint-prettier/recommended"必须放在前面
-    extends: [
-        "stylelint-prettier/recommended",
-        "stylelint-config-recommended-less",
-        "stylelint-config-standard-scss",
-        "stylelint-config-rational-order",
-        "stylelint-config-recommended-vue"
-    ],
+    extends: ["stylelint-prettier/recommended", "stylelint-config-rational-order"],
     // 全局规则 方式1：null（禁用），方式2：[选项1，选项2]，选项2可配置（disableFix：是否禁用修复，message：自定义错误提示，reportDisables：是否禁用注释忽略规则，severity：错误提示严重性）
     rules: {
         // #region CODE: stylelint内置规则
@@ -43,9 +37,9 @@ module.exports = {
         // 关闭强制使用kebab-case规范的类名
         "selector-class-pattern": null,
         // 限制scss中&字符嵌套深度 例如：.grand-grand-child 的嵌套深度为3
-        "max-nesting-depth": 5,
+        "max-nesting-depth": 10,
         // 限制选择器深度 例如：.parent .child .grand-child 的嵌套深度为2
-        "selector-max-compound-selectors": 5,
+        "selector-max-compound-selectors": 10,
         // ccs函数名必须使用 kebab-case 规范
         "function-no-unknown": [
             true,
@@ -66,6 +60,7 @@ module.exports = {
         {
             files: ["**/*.vue"],
             customSyntax: "postcss-html",
+            extends: ["stylelint-config-recommended-vue"],
             rules: {
                 // 忽略未知的伪类选择器
                 "selector-pseudo-class-no-unknown": [
@@ -82,6 +77,16 @@ module.exports = {
                     }
                 ]
             }
+        },
+        {
+            files: ["**/*.scss"],
+            customSyntax: "postcss-scss",
+            extends: ["stylelint-config-recommended-scss"]
+        },
+        {
+            files: ["**/*.less"],
+            customSyntax: "postcss-less",
+            extends: ["stylelint-config-recommended-less"]
         }
     ]
 }

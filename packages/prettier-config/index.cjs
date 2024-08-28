@@ -43,13 +43,11 @@ module.exports = {
     // Prettier 不会更改 Markdown 文本 例如：README.md
     proseWrap: "preserve",
     // 指定 HTML、Vue、Angular 和 Handlebars 的全局空白敏感度，如果行标签可能会改变间距，保留空格，如果是块标签无法影响布局，则去除空格
-    htmlWhitespaceSensitivity:
-        "css",
+    htmlWhitespaceSensitivity: "css",
     // 维护现有的行结尾（一个文件中的混合值通过查看第一行之后使用的内容来规范化）
     endOfLine: "auto",
     // 控制 Prettier 是否格式化嵌入在文件中的引用代码
-    embeddedLanguageFormatting:
-        "auto",
+    embeddedLanguageFormatting: "auto",
     // 不要强制每行使用一个属性
     singleAttributePerLine: false
 }

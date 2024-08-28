@@ -19,9 +19,9 @@ yarn add @dyb-dev/prettier-config -D
 
 ## 使用方法
 
-在你的 Prettier 配置文件中扩展此配置。你可以在 `.prettierrc.js` 或 `.prettierrc.mjs` 或 `.prettierrc.cjs` 文件中进行配置：
+在你的 Prettier 配置文件中扩展此配置。你可以在 `.prettierrc.mjs` 或 `.prettierrc.cjs` 文件中进行配置：
 
-`.prettierrc.js` 或 `.prettierrc.mjs` 文件示例
+`.prettierrc.mjs` 文件示例
 
 ```js
 import prettierConfig from "@dyb-dev/prettier-config"
@@ -45,6 +45,8 @@ module.exports = prettierConfig
 -   **Html 文件格式化**: 支持 HTML 文件的格式化，确保网页结构清晰规范。
 -   **Markdown 文件格式化**: 提供对 Markdown 文件的格式化支持，确保文档内容易读且统一。
 -   **.d.ts 文件格式化**: 针对 TypeScript 的类型声明文件进行格式化，确保类型定义清晰一致。
+
+## 常见问题
 
 ### 安装包后无法使用格式化
 

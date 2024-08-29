@@ -1,0 +1,56 @@
+{
+    "name": "@dyb-dev/ts-config",
+    "version": "0.0.1",
+    "description": "TypeScript 配置",
+    "author": "dyb-dev",
+    "license": "MIT",
+    "type": "module",
+    "private": false,
+    "main": "./tsconfig.json",
+    "exports": {
+        ".": {
+            "require": "./tsconfig.json"
+        },
+        "./types": {
+            "types": "./types/index.d.ts"
+        }
+    },
+    "files": [
+        "types",
+        "tsconfig.json",
+        "package.json",
+        "README.md"
+    ],
+    "engines": {
+        "node": ">=18.0.0",
+        "pnpm": ">=8.15.5"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dyb-dev/base-lib"
+    },
+    "homepage": "https://github.com/dyb-dev/base-lib/tree/main/packages/ts-config",
+    "bugs": {
+        "url": "https://github.com/dyb-dev/base-lib/issues",
+        "directory": "https://github.com/dyb-dev/base-lib/tree/main/packages/ts-config"
+    },
+    "keywords": [
+        "ts",
+        "ts-config",
+        "typescript",
+        "typescript-config",
+        "tsconfig",
+        "tsconfig.json",
+        "tsconfig.base.json"
+    ],
+    "devDependencies": {
+        "typescript": "catalog:"
+    },
+    "peerDependencies": {
+        "typescript": "^5.4.5"
+    }
+}

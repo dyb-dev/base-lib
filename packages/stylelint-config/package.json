@@ -1,6 +1,6 @@
 {
     "name": "@dyb-dev/stylelint-config",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Stylelint 配置",
     "author": "dyb-dev",
     "license": "MIT",
@@ -42,7 +42,7 @@
         "stylelint-config"
     ],
     "devDependencies": {
-        "stylelint": "^16.2.1"
+        "stylelint": "catalog:"
     },
     "dependencies": {
         "postcss": "^8.4.37",
@@ -55,7 +55,7 @@
         "stylelint-config-recommended-vue": "^1.5.0",
         "stylelint-order": "^6.0.4",
         "stylelint-prettier": "^5.0.0",
-        "prettier": "^3.3.2"
+        "prettier": "^3.3.3"
     },
     "peerDependencies": {
         "stylelint": "^16.2.1"

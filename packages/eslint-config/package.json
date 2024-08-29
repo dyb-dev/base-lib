@@ -1,6 +1,6 @@
 {
     "name": "@dyb-dev/eslint-config",
-    "version": "0.0.9",
+    "version": "0.1.0",
     "description": "Eslint 配置",
     "author": "dyb-dev",
     "license": "MIT",
@@ -45,8 +45,8 @@
         "@typescript-eslint/eslint-plugin"
     ],
     "devDependencies": {
-        "eslint": "^8.57.0",
-        "typescript": "^5.4.5"
+        "eslint": "catalog:",
+        "typescript": "catalog:"
     },
     "dependencies": {
         "@typescript-eslint/eslint-plugin": "^6.2.1",

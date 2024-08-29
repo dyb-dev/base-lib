@@ -1,0 +1,76 @@
+/*
+ * @Author: dyb-dev
+ * @Date: 2024-08-28 22:11:18
+ * @LastEditors: dyb-dev
+ * @LastEditTime: 2024-08-30 01:17:47
+ * @FilePath: /base-lib/node_modules/@dyb-dev/ts-config/tsconfig.json
+ * @Description: ts基础配置
+ */
+
+{
+    "compilerOptions": {
+        /* 访问 https://aka.ms/tsconfig 了解更多有关此文件的信息 */
+
+        /* 项目 */
+        // 启用增量编译模式
+        "composite": true,
+        // 禁止截断错误信息，确保显示完整的错误消息
+        "noErrorTruncation": true,
+
+        /* 语言和环境 */
+        // 设置用于生成的 JavaScript 的 JavaScript 语言版本，并包括兼容的库声明
+        "target": "ESNext",
+
+        /* 模块 */
+        // 指定生成的模块代码
+        "module": "ESNext",
+        // 指定模块解析策略，支持现代打包工具
+        "moduleResolution": "Bundler",
+        // 允许导入包含 TypeScript 文件扩展名的文件
+        "allowImportingTsExtensions": true,
+        // 启用导入 .json 文件
+        "resolveJsonModule": true,
+
+        /* 输出 */
+        // 禁止输出文件
+        "noEmit": true,
+        // 生成的 .d.ts 文件中移除所有被标记为 @internal 的成员、属性或方法
+        "stripInternal": true,
+        // 导入类型时必须使用 import type 语法
+        "verbatimModuleSyntax": true,
+        // 确保导入的文件名大小写正确
+        "forceConsistentCasingInFileNames": true,
+
+        /* 类型检查 */
+        // 启用所有严格的类型检查选项
+        "strict": true,
+        // 存在隐式的 any 类型时报错
+        "noImplicitAny": true,
+        // 对 null 和 undefined 进行更严格的类型检查
+        "strictNullChecks": true,
+        // 启用严格的函数类型检查
+        "strictFunctionTypes": true,
+        // 检查 bind、call 和 apply 方法的参数是否与原始函数匹配
+        "strictBindCallApply": true,
+        // 检查在构造函数中声明但未设置的类属性
+        "strictPropertyInitialization": true,
+        // 'this' 被赋予 'any' 类型时报错
+        "noImplicitThis": true,
+        // 默认将 catch 子句变量设为 unknown 而不是 any
+        "useUnknownInCatchVariables": true,
+        // 以严格模式解析并为每个源文件生成 "use strict" 语句
+        "alwaysStrict": true,
+        // 存在未使用的局部变量时生成一个编译错误
+        "noUnusedLocals": true,
+        // 存在未使用的函数参数时生成一个编译错误
+        "noUnusedParameters": true,
+        // 为 switch 语句中的穿透情况启用错误报告
+        "noFallthroughCasesInSwitch": true,
+        // 确保派生类中的重写成员标有 override 修饰符
+        "noImplicitOverride": true,
+        // 强制使用索引访问器访问使用索引类型声明的键
+        "noPropertyAccessFromIndexSignature": true,
+        // 跳过对所有库 .d.ts 文件的类型检查
+        "skipLibCheck": true
+    }
+}

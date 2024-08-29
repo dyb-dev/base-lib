@@ -1,6 +1,6 @@
 {
     "name": "@dyb-dev/prettier-config",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "Prettier 配置",
     "author": "dyb-dev",
     "license": "MIT",
@@ -42,7 +42,7 @@
         "prettier-config"
     ],
     "devDependencies": {
-        "prettier": "^3.3.2"
+        "prettier": "catalog:"
     },
     "peerDependencies": {
         "prettier": "^3.3.2"

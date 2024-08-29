@@ -1,2 +1,10 @@
+# 根目录
 packages:
-  - 'packages/*'
+    - "packages/*"
+
+# 公共包
+catalog:
+    eslint: ^8.57.0
+    prettier: ^3.3.3
+    stylelint: ^16.2.1
+    typescript: ^5.4.5

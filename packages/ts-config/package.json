@@ -1,23 +1,29 @@
 {
     "name": "@dyb-dev/ts-config",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "description": "TypeScript 配置",
     "author": "dyb-dev",
     "license": "MIT",
     "type": "module",
     "private": false,
-    "main": "./tsconfig.json",
+    "main": "./configs/tsconfig.base.json",
     "exports": {
         ".": {
-            "require": "./tsconfig.json"
+            "require": "./configs/tsconfig.base.json"
+        },
+        "./vue": {
+            "require": "./configs/tsconfig.vue.json"
+        },
+        "./node": {
+            "require": "./configs/tsconfig.node.json"
         },
         "./types": {
             "types": "./types/index.d.ts"
         }
     },
     "files": [
+        "configs",
         "types",
-        "tsconfig.json",
         "package.json",
         "README.md"
     ],

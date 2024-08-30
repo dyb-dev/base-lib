@@ -1,6 +1,6 @@
 # @dyb-dev/ts-config
 
-`@dyb-dev/ts-config` 是一个全面的 TypeScript 配置包，提供项目中基础的 TypeScript 配置以及一些常用的自定义类型和类型工具。此包旨在为你的项目提供统一和一致的编码风格。
+`@dyb-dev/ts-config` 是一个全面的 TypeScript 配置包，提供项目中基础的 TypeScript 配置、Vue 和 Node.js 环境下的 TypeScript 配置，以及一些常用的自定义类型和类型工具。此包旨在为你的项目提供统一和一致的编码风格。
 
 ## 安装
 
@@ -21,7 +21,7 @@ yarn add @dyb-dev/ts-config -D
 
 在你的 `tsconfig.json` 文件中扩展此配置：
 
-`tsconfig.json` 文件示例
+`tsconfig.json` 基础 ts 配置文件示例
 
 ```json
 {
@@ -35,9 +35,39 @@ yarn add @dyb-dev/ts-config -D
 }
 ```
 
+`tsconfig.json` Vue 环境下 ts 配置示例
+
+```json
+{
+    "extends": "@dyb-dev/ts-config/vue",
+    "include": ["**/*.ts", "**/*.d.ts", "**/*.tsx", "**/*.vue"],
+    "exclude": ["node_modules", "**/node_modules", ".history"],
+    "compilerOptions": {
+        "types": ["@dyb-dev/ts-config/types"],
+        "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo"
+    }
+}
+```
+
+`tsconfig.json` Node.js 环境下 ts 配置示例
+
+```json
+{
+    "extends": "@dyb-dev/ts-config/node",
+    "include": ["**/*.ts", "**/*.d.ts", "**/*.tsx", "**/*.vue"],
+    "exclude": ["node_modules", "**/node_modules", ".history"],
+    "compilerOptions": {
+        "types": ["@dyb-dev/ts-config/types"],
+        "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo"
+    }
+}
+```
+
 ## 功能支持
 
 -   **基础的 TypeScript 配置**: 提供项目中常用的 TypeScript 编译选项，确保代码风格一致。
+-   **Vue 环境的 TypeScript 配置**: 为 Vue 项目提供合适的 TypeScript 编译选项，支持 JSX/TSX 语法。
+-   **Node.js 环境的 TypeScript 配置**: 为 Node.js 项目提供合适的 TypeScript 编译选项，支持现代模块解析和目标环境。
 -   **常用的 TypeScript 自定义类型**: 包含常用的 TypeScript 类型定义和类型工具。
 -   **TS 类型工具**: 提供用于处理复杂类型的工具函数，如类型提取、类型转换等。
 

@@ -6,9 +6,13 @@
     "license": "MIT",
     "type": "module",
     "private": true,
+    "packageManager": "pnpm@8.15.5",
     "engines": {
         "node": ">=18.0.0",
         "pnpm": ">=8.15.5"
+    },
+    "scripts": {
+        "postinstall": "pnpm -r run build"
     },
     "devDependencies": {
         "@dyb-dev/eslint-config": "workspace:*",

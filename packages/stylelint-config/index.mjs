@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-08-28 14:32:57
  * @LastEditors: dyb-dev
- * @LastEditTime: 2024-08-28 20:09:22
+ * @LastEditTime: 2024-09-05 20:57:34
  * @FilePath: /base-lib/packages/stylelint-config/index.mjs
  * @Description: Stylelint 配置
  */
@@ -52,8 +52,8 @@ export default {
 
         // #endregion
 
-        // stylelint-order插件 指定不同类型声明的期望顺序 css变量 > $变量  > 属性样式 > 选择器 > @函数
-        "order/order": ["custom-properties", "dollar-variables", "declarations", "rules", "at-rules"]
+        // stylelint-order插件 指定不同类型声明的期望顺序 css变量 > $变量  > 属性样式 > @函数 > 选择器
+        "order/order": ["custom-properties", "dollar-variables", "declarations", "at-rules", "rules"]
     },
     // 指定特定文件，可以单独设置设置解析器、插件、继承规则、规则，优先级比全局规则更高
     overrides: [

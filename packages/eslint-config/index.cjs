@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-08-21 12:17:43
  * @LastEditors: dyb-dev
- * @LastEditTime: 2024-08-28 20:32:35
+ * @LastEditTime: 2024-09-19 17:22:35
  * @FilePath: /base-lib/packages/eslint-config/index.cjs
  * @Description: Eslint 配置
  */
@@ -100,7 +100,7 @@ module.exports = {
                 // 禁止使用多个空格
                 "no-multi-spaces": "error",
                 // 禁止多次声明同一变量
-                "no-redeclare": "error",
+                "no-redeclare": "off",
                 // 禁止在return语句中使用赋值语句
                 "no-return-assign": "error",
                 // 禁用不必要的[return/await]
@@ -169,7 +169,7 @@ module.exports = {
                 // #region CODE: eslint-plugin-import 插件规则
 
                 // 忽略虚拟模块
-                "import/no-unresolved": ["error", { ignore: ["^virtual:", "@"] }],
+                "import/no-unresolved": ["error", { ignore: ["^virtual:", "@", "#", "~"] }],
                 "import/order": [
                     "error",
                     {
@@ -263,7 +263,9 @@ module.exports = {
                 // 关闭强制函数返回类型的规则
                 "@typescript-eslint/explicit-function-return-type": "off",
                 // 关闭强制导出函数返回类型的规则
-                "@typescript-eslint/explicit-module-boundary-types": "off"
+                "@typescript-eslint/explicit-module-boundary-types": "off",
+                // 扩展 eslint/no-redeclare 规则,增加对 TypeScript 函数重载和声明合并的支持
+                "@typescript-eslint/no-redeclare": ["error", { ignoreDeclarationMerge: true }]
             }
             // #endregion
         },

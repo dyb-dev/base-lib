@@ -1,6 +1,6 @@
 {
     "name": "@dyb-dev/ts-config",
-    "version": "0.0.3",
+    "version": "0.0.7",
     "description": "TypeScript 配置",
     "author": "dyb-dev",
     "license": "MIT",

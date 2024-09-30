@@ -2,26 +2,10 @@
  * @Author: dyb-dev
  * @Date: 2024-08-28 23:06:16
  * @LastEditors: dyb-dev
- * @LastEditTime: 2024-08-29 22:25:57
+ * @LastEditTime: 2024-09-09 00:00:57
  * @FilePath: /base-lib/packages/ts-config/types/tool.d.ts
  * @Description: ts常用类型工具模块
  */
-
-/**
- * 用于表示一个通用的函数类型
- *
- * @template Params - 函数的参数类型，默认值为 `any`。可以是单个类型或类型的元组。
- * @template ReturnType - 函数的返回值类型，默认值为 `any`。可以是单个类型或联合类型。
- * @returns 一个接受类型 `Params` 参数并返回类型 `ReturnType` 的函数类型
- * @example
- * // 一个带有 2 个参数的函数类型示例
- * // 参数类型分别是 number, string
- * // 返回值类型为 string 或 Promise<string>
- * TFunction<[number, string], string | Promise<string>>
- */
-declare type TFunction<Params = any, ReturnType = any> = Params extends any[]
-    ? (...args: Params) => ReturnType
-    : (...args: [Params]) => ReturnType
 
 /**
  * 用于提取元组或对象类型的键，并根据传递的条件进行过滤

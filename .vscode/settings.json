@@ -28,15 +28,27 @@
     "editor.stickyScroll.enabled": true,
     "workbench.tree.indent": 10,
     "files.defaultLanguage": "html",
-    "explorer.compactFolders": false,
     "search.exclude": {
         "**/.history": true,
-        "**/cache": true
+        "**/cache": true,
+        "*-lock.*": true
     },
     "workbench.colorCustomizations": {
         "editor.lineHighlightBackground": "#1d375bb6"
     },
     "git.autofetch": true,
+    "explorer.compactFolders": false,
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.expand": false,
+    "explorer.fileNesting.patterns": {
+        ".env": ".env.*",
+        "eslint.config.*": ".eslintignore",
+        ".eslintrc*": ".eslintignore",
+        ".prettierrc*": ".prettierignore",
+        ".stylelintrc*": ".stylelintignore",
+        "tsconfig.json": "tsconfig.*.json",
+        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, pnpm-workspace.yaml, LICENSE"
+    },
 
     // #endregion
 
@@ -96,7 +108,7 @@
 
     // #region CODE: stylelint 插件配置
 
-    // 设置包管理器，以便正常解析stylelint依赖 默认：npm
+    // 设置包管理器，以便正常解析stylelint依赖（注意：只在 `stylelint` 依赖全局安装时才会生效） 默认：npm
     "stylelint.packageManager": "pnpm",
     // 设置stylelint所包含的文件类型
     "stylelint.validate": ["css", "sass", "scss", "less", "vue"],
@@ -196,7 +208,7 @@
     // 是否自动包含 @author 标签
     "docthis.includeAuthorTag": true,
     // 指定 @author 标签中的作者名称
-    "docthis.authorName": "dyb",
+    "docthis.authorName": "dyb-dev",
 
     // #endregion
 
@@ -291,12 +303,14 @@
         "gltf",
         "hbuilderx",
         "iife",
+        "jsdelivr",
         "jsnext",
         "Lazyload",
         "localforage",
         "micromessenger",
         "njsproj",
         "ntvs",
+        "OIDC",
         "pinia",
         "portfinder-sync",
         "precache",
@@ -311,6 +325,7 @@
         "tsbuildinfo",
         "unpackage",
         "unplugin",
+        "Vant",
         "vconsole",
         "VITE",
         "vitepress",
@@ -318,7 +333,7 @@
         "webp",
         "Weixin",
         "zepto",
-        "jsdelivr"
+        "vant"
     ]
 
     // #endregion

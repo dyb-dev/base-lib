@@ -1,6 +1,6 @@
 {
     "name": "@dyb-dev/stylelint-config",
-    "version": "0.0.3",
+    "version": "0.0.5",
     "description": "Stylelint 配置",
     "author": "dyb-dev",
     "license": "MIT",

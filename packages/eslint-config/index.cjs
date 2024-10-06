@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-08-21 12:17:43
  * @LastEditors: dyb-dev
- * @LastEditTime: 2024-09-19 17:22:35
+ * @LastEditTime: 2024-10-06 22:53:15
  * @FilePath: /base-lib/packages/eslint-config/index.cjs
  * @Description: Eslint 配置
  */
@@ -278,7 +278,7 @@ module.exports = {
             ],
             rules: {
                 // 强制组件使用emit事件名为 camelCase 或者 kebab-case 格式
-                "vue/custom-event-name-casing": ["error", "camelCase"],
+                "vue/custom-event-name-casing": ["error", "kebab-case"],
                 // 禁止使用组件事件时，例如驼峰形式：@componentsShowEvent，提示错误的规则
                 "vue/v-on-event-hyphenation": "off",
                 // 关闭禁止v-html指令的规则

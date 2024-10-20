@@ -1,0 +1,55 @@
+{
+    "name": "@dyb-dev/create-project",
+    "version": "0.0.2",
+    "description": "构建项目的脚手架工具",
+    "author": "dyb-dev",
+    "license": "MIT",
+    "type": "module",
+    "private": false,
+    "bin": {
+        "create-project": "./dist/index.cjs"
+    },
+    "files": [
+        "dist",
+        "package.json",
+        "README.md"
+    ],
+    "scripts": {
+        "build": "pnpm ts-check & pnpm build-only",
+        "build-only": "node ./scripts/build.mjs",
+        "ts-check": "tsc --noEmit"
+    },
+    "engines": {
+        "node": ">=18.0.0",
+        "pnpm": ">=8.15.5"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dyb-dev/base-lib"
+    },
+    "homepage": "https://github.com/dyb-dev/base-lib/tree/main/packages/create-project",
+    "bugs": {
+        "url": "https://github.com/dyb-dev/base-lib/issues",
+        "directory": "https://github.com/dyb-dev/base-lib/tree/main/packages/create-project"
+    },
+    "keywords": [
+        "project",
+        "project-template",
+        "template-project",
+        "create-project",
+        "create-project-cli"
+    ],
+    "devDependencies": {
+        "@types/node": "^22.7.7",
+        "@types/prompts": "^2.4.9",
+        "esbuild": "^0.24.0",
+        "gradient-string": "^3.0.0",
+        "kolorist": "^1.8.0",
+        "ora": "^8.1.0",
+        "prompts": "^2.4.2"
+    }
+}

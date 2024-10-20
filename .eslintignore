@@ -15,7 +15,7 @@ logs
 *.log*
 
 # 项目文件
-dev*
+/dev*
 cache
 dist
 node_modules

@@ -334,7 +334,10 @@
         "webp",
         "Weixin",
         "zepto",
-        "vant"
+        "vant",
+        "kolorist",
+        "positionals",
+        "outfile"
     ]
 
     // #endregion

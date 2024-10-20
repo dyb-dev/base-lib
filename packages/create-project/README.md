@@ -29,13 +29,13 @@ pnpm create @dyb-dev/create-project my-project --force
 
 当前支持的项目模板列表如下：
 
-| 项目模板                   | 描述                                            | URL                                                                         |
-| -------------------------- | ----------------------------------------------- | --------------------------------------------------------------------------- |
-| **web-mobile-template**    | 基于 `vue3全家桶` 搭建的 Web 移动端模板         | [web-mobile-template](https://github.com/dyb-dev/web-mobile-template)       |
-| **uniapp-mp-wx-template**  | 基于 `uni-app + vue3 + ts` 搭建的微信小程序模板 | [uniapp-mp-wx-template](https://github.com/dyb-dev/uniapp-mp-wx-template)   |
-| **fn-lib-template**        | 基于 `vite` 搭建的 TS 函数库模版                | [fn-lib-template](https://github.com/dyb-dev/fn-lib-template)               |
-| **component-lib-template** | 基于 `vite` 搭建的 vue3 + ts 组件库模版         | [component-lib-template](https://github.com/dyb-dev/component-lib-template) |
-| **lib-docs-template**      | 基于 `vitepress` 搭建的库文档模板               | [lib-docs-template](https://github.com/dyb-dev/lib-docs-template)           |
+| 项目模板                                                                        | 描述                                            |
+| ------------------------------------------------------------------------------- | ----------------------------------------------- |
+| [**web-mobile-template**](https://github.com/dyb-dev/web-mobile-template)       | 基于 `vue3全家桶` 搭建的 Web 移动端模板         |
+| [**uniapp-mp-wx-template**](https://github.com/dyb-dev/uniapp-mp-wx-template)   | 基于 `uni-app + vue3 + ts` 搭建的微信小程序模板 |
+| [**fn-lib-template**](https://github.com/dyb-dev/fn-lib-template)               | 基于 `vite` 搭建的 TS 函数库模版                |
+| [**component-lib-template**](https://github.com/dyb-dev/component-lib-template) | 基于 `vite` 搭建的 vue3 + ts 组件库模版         |
+| [**lib-docs-template**](https://github.com/dyb-dev/lib-docs-template)           | 基于 `vitepress` 搭建的库文档模板               |
 
 ## 贡献指南
 

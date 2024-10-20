@@ -60,16 +60,17 @@ const init = async() => {
             strict: false
         })
 
-        /** 项目名称 */
-        let _projectName = positionalArgs[0]
-
-        /** 是否强制覆盖 */
-        const _forceOverwrite = !!parsedOptions.force
-
         /** 当前工作目录 */
         const _currentWorkingDir = process.cwd()
-        /** 当前工作目录名字 */
-        const _currentWorkingDirName = basename(_currentWorkingDir)
+
+        /** 项目名称参数 */
+        let _projectNameArg = positionalArgs[0] || ""
+        /** 获取项目根目录路径 */
+        let _projectRootDir = ""
+        /** 项目名称 */
+        let _projectName = ""
+        /** 是否强制覆盖 */
+        const _forceOverwrite = !!parsedOptions.force
 
         /** 交互结果 */
         let result: {
@@ -88,18 +89,30 @@ const init = async() => {
                 // 字段名称
                 name: "projectName",
                 // 控件类型
-                type: _projectName ? null : "text",
+                type: _projectNameArg ? null : "text",
                 // 左侧提示信息
                 message: "请输入项目名称[输入 `.` 在 `当前目录` 构建项目]:",
                 // 默认值
                 initial: DEFAULT_PROJECT_NAME,
-                onState: state => (_projectName = String(state.value).trim()) || DEFAULT_PROJECT_NAME
+                onState: state => {
+
+                    _projectNameArg = String(state.value).trim() || DEFAULT_PROJECT_NAME
+
+                }
             },
             {
                 name: "shouldOverwrite",
-                type: () => canSkipEmptying(_projectName) || _forceOverwrite ? null : "toggle",
-                message: () =>
-                    `目录 \`${_projectName === "." ? _currentWorkingDirName : _projectName}\` 内容不为空，是否删除该目录所有文件并继续?`,
+                type: () => {
+
+                    // 拼接项目根目录路径
+                    _projectRootDir = join(_currentWorkingDir, _projectNameArg)
+                    // 获取项目名称
+                    _projectName = basename(_projectRootDir)
+
+                    return canSkipEmptying(_projectRootDir) || _forceOverwrite ? null : "toggle"
+
+                },
+                message: () => `目录 \`${_projectName}\` 内容不为空，是否删除该目录所有文件并继续?`,
                 initial: false,
                 active: "是",
                 inactive: "否"
@@ -138,7 +151,7 @@ const init = async() => {
         ])
 
         /** 交互结果 */
-        const { projectName = _projectName, packageName = projectName, shouldOverwrite = _forceOverwrite, templateUrl } = result
+        const { packageName = _projectName, shouldOverwrite = _forceOverwrite, templateUrl } = result
 
         // 如果没有选择拉取的模板直接报错
         if (!templateUrl) {
@@ -146,9 +159,6 @@ const init = async() => {
             throw red("✖") + " 您的操作已被终止"
 
         }
-
-        // 获取项目根目录
-        const _projectRootDir = join(_currentWorkingDir, projectName)
 
         // 如果项目根目录已经存在，且允许强制覆盖
         if (existsSync(_projectRootDir) && shouldOverwrite) {

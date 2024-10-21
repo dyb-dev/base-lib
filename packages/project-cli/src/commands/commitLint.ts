@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-10-21 21:51:16
  * @LastEditors: dyb-dev
- * @LastEditTime: 2024-10-22 02:21:17
+ * @LastEditTime: 2024-10-22 02:28:41
  * @FilePath: /base-lib/packages/project-cli/src/commands/commitLint.ts
  * @Description: git提交信息校验执行函数
  */
@@ -41,7 +41,7 @@ const mergeRE = /Merge /
 const commitLint = (gitParams: string) => {
 
     // 读取 git 提交信息并去除首尾空格
-    const _commitMsg = readFileSync(gitParams, "utf-8").trim()
+    const _commitMsg = readFileSync(gitParams, "utf-8")
 
     // 如果提交信息不符合 commitRE 或 mergeRE 的格式
     if (!commitRE.test(_commitMsg) && !mergeRE.test(_commitMsg)) {

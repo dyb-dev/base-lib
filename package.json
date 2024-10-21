@@ -1,6 +1,6 @@
 {
     "name": "base-lib",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "项目中常用的基础库",
     "author": "dyb-dev",
     "license": "MIT",
@@ -9,17 +9,20 @@
     "packageManager": "pnpm@8.15.5",
     "engines": {
         "node": ">=18.0.0",
-        "pnpm": ">=8.15.5"
+        "pnpm": ">=9.0.0"
     },
     "scripts": {
+        "prepare": "husky",
         "postinstall": "pnpm -r run build"
     },
     "devDependencies": {
         "@dyb-dev/eslint-config": "workspace:*",
         "@dyb-dev/prettier-config": "workspace:*",
+        "@dyb-dev/project-cli": "workspace:*",
         "@dyb-dev/stylelint-config": "workspace:*",
         "@dyb-dev/ts-config": "workspace:*",
         "eslint": "catalog:",
+        "husky": "^9.1.6",
         "prettier": "catalog:",
         "prettier-eslint": "^16.3.0",
         "stylelint": "catalog:",

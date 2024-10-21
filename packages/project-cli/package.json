@@ -1,13 +1,13 @@
 {
-    "name": "@dyb-dev/create-project",
-    "version": "0.0.7",
-    "description": "构建项目的脚手架工具",
+    "name": "@dyb-dev/project-cli",
+    "version": "0.0.1",
+    "description": "项目中常用操作的自动化脚手架工具",
     "author": "dyb-dev",
     "license": "MIT",
     "type": "module",
     "private": false,
     "bin": {
-        "create-project": "./dist/index.cjs"
+        "project-cli": "./dist/index.cjs"
     },
     "files": [
         "dist",
@@ -17,7 +17,8 @@
     "scripts": {
         "build": "pnpm ts-check & pnpm build-only",
         "build-only": "node ./scripts/build.mjs",
-        "ts-check": "tsc --noEmit"
+        "ts-check": "tsc --noEmit",
+        "test": "node ./dist/index.cjs -h"
     },
     "engines": {
         "node": ">=18.0.0",
@@ -31,25 +32,19 @@
         "type": "git",
         "url": "https://github.com/dyb-dev/base-lib"
     },
-    "homepage": "https://github.com/dyb-dev/base-lib/tree/main/packages/create-project",
+    "homepage": "https://github.com/dyb-dev/base-lib/tree/main/packages/project-cli",
     "bugs": {
         "url": "https://github.com/dyb-dev/base-lib/issues",
-        "directory": "https://github.com/dyb-dev/base-lib/tree/main/packages/create-project"
+        "directory": "https://github.com/dyb-dev/base-lib/tree/main/packages/project-cli"
     },
     "keywords": [
-        "project",
-        "project-template",
-        "template-project",
-        "create-project",
-        "create-project-cli"
+        "cli",
+        "project-cli"
     ],
     "devDependencies": {
         "@types/node": "^22.7.7",
-        "@types/prompts": "^2.4.9",
+        "commander": "^12.1.0",
         "esbuild": "^0.24.0",
-        "gradient-string": "^3.0.0",
-        "kolorist": "^1.8.0",
-        "ora": "^8.1.0",
-        "prompts": "^2.4.2"
+        "kolorist": "^1.8.0"
     }
 }

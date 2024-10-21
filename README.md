@@ -5,19 +5,20 @@
 ## 环境要求
 
 -   **Node.js**: `>=18.0.0`
--   **pnpm**: `>=8.15.5`
+-   **pnpm**: `>=9.0.0`
 
 ## 子包信息
 
 此项目包含以下子包:
 
-| 子包名称                                            | 描述                     |
-| --------------------------------------------------- | ------------------------ |
-| [**create-project**](./packages/create-project)     | 快速构建项目的脚手架工具 |
-| [**eslint-config**](./packages/eslint-config)       | 自定义 ESLint 配置       |
-| [**prettier-config**](./packages/prettier-config)   | 自定义 Prettier 配置     |
-| [**stylelint-config**](./packages/stylelint-config) | 自定义 Stylelint 配置    |
-| [**ts-config**](./packages/ts-config)               | 自定义 TypeScript 配置   |
+| 子包名称                                            | 描述                             |
+| --------------------------------------------------- | -------------------------------- |
+| [**create-project**](./packages/create-project)     | 快速构建项目的脚手架工具         |
+| [**project-cli**](./packages/project-cli)           | 项目中常用操作的自动化脚手架工具 |
+| [**eslint-config**](./packages/eslint-config)       | 自定义 ESLint 配置               |
+| [**prettier-config**](./packages/prettier-config)   | 自定义 Prettier 配置             |
+| [**stylelint-config**](./packages/stylelint-config) | 自定义 Stylelint 配置            |
+| [**ts-config**](./packages/ts-config)               | 自定义 TypeScript 配置           |
 
 ## 安装
 
@@ -27,14 +28,25 @@
 pnpm install
 ```
 
+安装过程中，`pnpm` 将通过以下脚本初始化 `husky` 工具:
+
+```json
+"prepare": "husky"
+```
+
 安装完成后，`pnpm` 将通过以下脚本自动构建所有子包：
 
 ```json
+// 该脚本的目的是在安装依赖后，避免子包之间的互相引用导致报错的情况，自动执行构建流程。
 "postinstall": "pnpm -r run build"
 ```
 
-该脚本的目的是在安装依赖后，避免子包之间的互相引用导致报错的情况，自动执行构建流程。
+## 贡献指南
+
+如果您发现任何问题或希望贡献代码，请提交 issue 或 pull request 到 GitHub 仓库：
+
+-   [GitHub 仓库](https://github.com/dyb-dev/base-lib)
 
 ## 许可证
 
-此项目使用 `MIT` 许可证。
+[MIT License](LICENSE)

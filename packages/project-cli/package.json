@@ -1,6 +1,6 @@
 {
     "name": "@dyb-dev/project-cli",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "项目中常用操作的自动化脚手架工具",
     "author": "dyb-dev",
     "license": "MIT",

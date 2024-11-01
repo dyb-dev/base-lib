@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-10-21 16:19:02
  * @LastEditors: dyb-dev
- * @LastEditTime: 2024-11-02 04:04:33
+ * @LastEditTime: 2024-11-02 04:40:01
  * @FilePath: /base-lib/packages/project-cli/src/index.ts
  * @Description: 程序入口文件
  */
@@ -15,7 +15,7 @@ import { version } from "../package.json"
 import { commitLint } from "./commands"
 
 /** 输出带绿色的标题 */
-console.log(bold(green(`Project CLI v${version}\n`)))
+console.log(bold(green(`\nProject CLI v${version}\n`)))
 
 /** 创建 CLI 程序对象 */
 const program = new Command()

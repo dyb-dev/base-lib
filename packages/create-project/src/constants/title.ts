@@ -2,17 +2,17 @@
  * @Author: dyb-dev
  * @Date: 2024-10-20 01:04:30
  * @LastEditors: dyb-dev
- * @LastEditTime: 2024-10-20 17:53:19
+ * @LastEditTime: 2024-11-02 04:11:13
  * @FilePath: /base-lib/packages/create-project/src/constants/title.ts
  * @Description: 标题相关常量
  */
 
 import gradientString from "gradient-string"
 
-import pkg from "../../package.json"
+import { version, description } from "../../package.json"
 
 /** STATIC: 默认标题 */
-const DEFAULT_TITLE = pkg.description
+const DEFAULT_TITLE = `${description} v${version}`
 
 /** STATIC: 渐变色的标题 */
 const GRADIENT_TITLE = gradientString([

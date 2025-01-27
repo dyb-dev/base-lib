@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-12-11 17:22:25
  * @LastEditors: dyb-dev
- * @LastEditTime: 2025-01-28 03:41:01
+ * @LastEditTime: 2025-01-28 03:51:28
  * @FilePath: /base-lib/packages/project-cli/src/commands/release.ts
  * @Description: 发布执行函数
  */
@@ -636,7 +636,7 @@ const release = async(): Promise<void> => {
         // 判断是否初始化Git仓库
         if (isGitInit()) {
 
-            console.log(bold("开始执行 git commit 和 git push 操作"))
+            console.log(bold(`开始执行 ${green("git commit")} 和 ${green("git push")} 操作`))
             console.log()
 
             // 提交Git更改
@@ -644,6 +644,7 @@ const release = async(): Promise<void> => {
             // 推送Git更改
             pushGitChanges()
 
+            console.log()
             console.log(bold(`已完成 ${green("git commit")} 和 ${green("git push")} 操作`))
             console.log()
 

@@ -1,6 +1,6 @@
 {
     "name": "@dyb-dev/create-project",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "description": "构建项目的脚手架工具",
     "author": "dyb-dev",
     "license": "MIT",
@@ -17,7 +17,8 @@
     "scripts": {
         "build": "pnpm ts-check & pnpm build-only",
         "build-only": "node ./scripts/build.mjs",
-        "ts-check": "tsc --noEmit"
+        "ts-check": "tsc --noEmit",
+        "release": "project-cli release"
     },
     "engines": {
         "node": ">=18.0.0",

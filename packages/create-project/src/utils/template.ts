@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-10-20 01:37:25
  * @LastEditors: dyb-dev
- * @LastEditTime: 2024-10-20 16:45:36
+ * @LastEditTime: 2025-01-28 04:14:21
  * @FilePath: /base-lib/packages/create-project/src/utils/template.ts
  * @Description: 模板相关工具函数
  */
@@ -48,6 +48,16 @@ const downloadTemplate = (projectRootDir: string, url: string): Promise<boolean>
             try {
 
                 rmSync(`${projectRootDir}/.git`, { recursive: true, force: true })
+
+                // 删除 .github 文件夹
+                const _githubDir = `${projectRootDir}/.github`
+                // 如果 .github 文件夹存在，删除
+                if (existsSync(_githubDir)) {
+
+                    rmSync(_githubDir, { recursive: true, force: true })
+
+                }
+
                 console.log()
                 // 显示进度条成功状态
                 _progressBar.succeed(`拉取项目模板成功 ${projectRootDir}`)
@@ -56,8 +66,8 @@ const downloadTemplate = (projectRootDir: string, url: string): Promise<boolean>
             }
             catch (error: any) {
 
-                // 如果删除 .git 失败，更新进度条为失败状态
-                _progressBar.fail(`删除 .git 文件夹失败 ${projectRootDir}`)
+                // 如果删除文件夹失败，更新进度条为失败状态
+                _progressBar.fail(`删除 .git 或 .github 文件夹失败 ${projectRootDir}`)
                 reject(red("✖") + ` ${error.message}`)
 
             }

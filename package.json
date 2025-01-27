@@ -1,6 +1,6 @@
 {
     "name": "base-lib",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "项目中常用的基础库",
     "author": "dyb-dev",
     "license": "MIT",
@@ -13,7 +13,8 @@
     },
     "scripts": {
         "prepare": "husky",
-        "postinstall": "pnpm -r run build"
+        "postinstall": "pnpm -r run build",
+        "release": "project-cli release"
     },
     "devDependencies": {
         "@dyb-dev/eslint-config": "workspace:*",

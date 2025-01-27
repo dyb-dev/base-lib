@@ -2,17 +2,17 @@
  * @Author: dyb-dev
  * @Date: 2024-10-21 16:19:02
  * @LastEditors: dyb-dev
- * @LastEditTime: 2024-11-02 04:40:01
+ * @LastEditTime: 2024-12-11 20:26:38
  * @FilePath: /base-lib/packages/project-cli/src/index.ts
  * @Description: 程序入口文件
  */
 
 import { Command } from "commander"
-import { bold, green } from "kolorist"
+import { bold, green } from "picocolors"
 
 import { version } from "../package.json"
 
-import { commitLint } from "./commands"
+import { commitLint, release } from "./commands"
 
 /** 输出带绿色的标题 */
 console.log(bold(green(`\nProject CLI v${version}\n`)))
@@ -22,6 +22,9 @@ const program = new Command()
 
 /** 设置版本号命令 可以使用 -V 选项查看版本 */
 program.version(`v${version}`)
+
+/** 定义 `release` 子命令，用于执行发布操作 */
+program.command("release").description("执行发布操作").action(release)
 
 /**
  * 定义 `commit-lint` 子命令，用于校验提交信息

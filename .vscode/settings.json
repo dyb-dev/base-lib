@@ -332,7 +332,8 @@
         "kolorist",
         "positionals",
         "outfile"
-    ]
+    ],
+    "cSpell.words": ["premajor", "preminor", "prepatch"]
 
     // #endregion
 }

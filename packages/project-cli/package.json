@@ -1,6 +1,6 @@
 {
     "name": "@dyb-dev/project-cli",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "description": "项目中常用操作的自动化脚手架工具",
     "author": "dyb-dev",
     "license": "MIT",
@@ -18,7 +18,8 @@
         "build": "pnpm ts-check & pnpm build-only",
         "build-only": "node ./scripts/build.mjs",
         "ts-check": "tsc --noEmit",
-        "test": "node ./dist/index.cjs -h"
+        "release": "project-cli release",
+        "test": "node ./dist/index.cjs release"
     },
     "engines": {
         "node": ">=18.0.0",
@@ -43,8 +44,12 @@
     ],
     "devDependencies": {
         "@types/node": "^22.7.7",
+        "@types/prompts": "^2.4.9",
+        "@types/semver": "^7.5.8",
         "commander": "^12.1.0",
         "esbuild": "^0.24.0",
-        "kolorist": "^1.8.0"
+        "picocolors": "^1.1.1",
+        "prompts": "^2.4.2",
+        "semver": "^7.6.3"
     }
 }

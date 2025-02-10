@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-12-11 17:22:25
  * @LastEditors: dyb-dev
- * @LastEditTime: 2025-01-28 03:51:28
+ * @LastEditTime: 2025-02-10 20:05:24
  * @FilePath: /base-lib/packages/project-cli/src/commands/release.ts
  * @Description: 发布执行函数
  */
@@ -212,6 +212,7 @@ const buildPackage = () => {
     // 同步执行构建命令，并将输出流传递给当前进程
     execSync(`${packageManager} run build`, { stdio: "inherit" })
 
+    console.log()
     console.log(bold(`已完成 ${green("build")} 操作`))
     console.log()
 
@@ -662,6 +663,7 @@ const release = async(): Promise<void> => {
     }
     catch (error) {
 
+        console.log()
         console.error(`${red("✖")} ${error}，已终止 release 进程`)
         console.log()
 

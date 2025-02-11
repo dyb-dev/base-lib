@@ -1,6 +1,6 @@
 {
     "name": "@dyb-dev/ts-config",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "TypeScript 配置",
     "author": "dyb-dev",
     "license": "MIT",
@@ -13,6 +13,9 @@
         },
         "./vue": {
             "require": "./configs/tsconfig.vue.json"
+        },
+        "./react": {
+            "require": "./configs/tsconfig.react.json"
         },
         "./node": {
             "require": "./configs/tsconfig.node.json"
@@ -27,6 +30,9 @@
         "package.json",
         "README.md"
     ],
+    "scripts": {
+        "release": "project-cli release"
+    },
     "engines": {
         "node": ">=18.0.0",
         "pnpm": ">=8.15.5"

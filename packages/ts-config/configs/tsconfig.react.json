@@ -1,0 +1,22 @@
+/*
+ * @Author: dyb-dev
+ * @Date: 2025-02-11 16:59:54
+ * @LastEditors: dyb-dev
+ * @LastEditTime: 2025-02-11 17:03:53
+ * @FilePath: /base-lib/packages/ts-config/configs/tsconfig.react.json
+ * @Description: ts react 配置
+ */
+
+{
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        // 指定要包含的标准库
+        "lib": ["ESNext", "DOM", "DOM.Iterable"],
+        // 设置为空避免意外包含不需要的类型
+        "types": [],
+        // 保留 JSX 语法，不进行编译转换，让其他工具（如 Babel）来处理。
+        "jsx": "react-jsx",
+        // 指定 JSX 编译的库来源，用于结合 react 的 JSX/TSX 支持。
+        "jsxImportSource": "react"
+    }
+}

@@ -1,6 +1,6 @@
 {
     "name": "@dyb-dev/eslint-config",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Eslint 配置",
     "author": "dyb-dev",
     "license": "MIT",
@@ -58,6 +58,8 @@
         "eslint-plugin-import": "^2.29.1",
         "eslint-plugin-jsdoc": "^48.2.3",
         "eslint-plugin-jsonc": "^2.15.1",
+        "eslint-plugin-jsx-a11y": "^6.10.2",
+        "eslint-plugin-react-hooks": "^5.1.0",
         "eslint-plugin-vue": "^9.25.0"
     },
     "peerDependencies": {

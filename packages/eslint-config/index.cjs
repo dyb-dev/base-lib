@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-08-21 12:17:43
  * @LastEditors: dyb-dev
- * @LastEditTime: 2024-10-06 22:53:15
+ * @LastEditTime: 2025-02-12 21:05:59
  * @FilePath: /base-lib/packages/eslint-config/index.cjs
  * @Description: Eslint 配置
  */
@@ -21,8 +21,8 @@ module.exports = {
     },
 
     overrides: [
+        // #region CODE: eslint 基础配置
         {
-            // #region CODE: eslint 基础配置
             files: ["**/*.*js", "**/*.ts", "**/*.vue", "**/*.jsx", "**/*.tsx", "**/*.json", "**/*.jsonc"],
             extends: [
                 // 继承ESLint官方推荐的规则
@@ -230,10 +230,10 @@ module.exports = {
 
                 // #endregion
             }
-            // #endregion
         },
+        // #endregion
+        // #region CODE: ts 配置
         {
-            // #region CODE: ts 配置
             files: ["**/*.ts", "**/*.d.ts", "**/*.vue", "**/*.tsx"],
             extends: [
                 // 继承TypeScript官方推荐的规则
@@ -267,10 +267,20 @@ module.exports = {
                 // 扩展 eslint/no-redeclare 规则,增加对 TypeScript 函数重载和声明合并的支持
                 "@typescript-eslint/no-redeclare": ["error", { ignoreDeclarationMerge: true }]
             }
-            // #endregion
+        },
+        // #endregion
+        // #region CODE: react 配置
+        {
+            files: ["**/*.js", "**/*.ts", "**/*.jsx", "**/*.tsx"],
+            extends: ["plugin:react-hooks/recommended"]
         },
         {
-            // #region CODE: vue 配置
+            files: ["**/*.jsx", "**/*.tsx"],
+            extends: ["plugin:jsx-a11y/recommended"]
+        },
+        // #endregion
+        // #region CODE: vue 配置
+        {
             files: ["**/*.vue"],
             extends: [
                 // 继承Vue 3官方推荐的规则
@@ -329,10 +339,10 @@ module.exports = {
                     }
                 ]
             }
-            // #endregion
         },
+        // #endregion
+        // #region CODE: json、jsonc 配置
         {
-            // #region CODE: json、jsonc 配置
             files: ["**/*.json", "**/*.jsonc"],
             extends: [
                 // 对json文件的规则
@@ -341,7 +351,7 @@ module.exports = {
             rules: {
                 "jsonc/indent": ["error", 4]
             }
-            // #endregion
         }
+        // #endregion
     ]
 }

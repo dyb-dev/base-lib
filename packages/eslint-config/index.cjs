@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-08-21 12:17:43
  * @LastEditors: dyb-dev
- * @LastEditTime: 2025-02-12 21:05:59
+ * @LastEditTime: 2025-02-22 15:41:02
  * @FilePath: /base-lib/packages/eslint-config/index.cjs
  * @Description: Eslint 配置
  */
@@ -273,10 +273,6 @@ module.exports = {
         {
             files: ["**/*.js", "**/*.ts", "**/*.jsx", "**/*.tsx"],
             extends: ["plugin:react-hooks/recommended"]
-        },
-        {
-            files: ["**/*.jsx", "**/*.tsx"],
-            extends: ["plugin:jsx-a11y/recommended"]
         },
         // #endregion
         // #region CODE: vue 配置

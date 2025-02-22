@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-10-20 01:03:34
  * @LastEditors: dyb-dev
- * @LastEditTime: 2024-10-20 13:57:03
+ * @LastEditTime: 2025-02-22 20:06:02
  * @FilePath: /base-lib/packages/create-project/src/constants/project.ts
  * @Description: 项目模板相关常量
  */
@@ -15,9 +15,14 @@ const DEFAULT_PROJECT_NAME = "default-project"
 /** STATIC: 项目模板列表 */
 const PROJECT_TEMPLATE_LIST = [
     {
-        title: "web-mobile-template",
+        title: "react-web-template",
+        description: "基于`react全家桶`搭建的Web移动端模板",
+        value: "https://github.com/dyb-dev/react-web-template.git"
+    },
+    {
+        title: "vue-web-template",
         description: "基于`vue3全家桶`搭建的Web移动端模板",
-        value: "https://github.com/dyb-dev/web-mobile-template.git"
+        value: "https://github.com/dyb-dev/vue-web-template.git"
     },
     {
         title: "uniapp-mp-wx-template",

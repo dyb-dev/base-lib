@@ -34,7 +34,8 @@ pnpm create @dyb-dev/create-project my-project --force
 
 | 项目模板                                                                        | 描述                                            |
 | ------------------------------------------------------------------------------- | ----------------------------------------------- |
-| [**web-mobile-template**](https://github.com/dyb-dev/web-mobile-template)       | 基于 `vue3全家桶` 搭建的 Web 移动端模板         |
+| [**react-web-template**](https://github.com/dyb-dev/react-web-template)         | 基于`react全家桶`搭建的Web移动端模板            |
+| [**vue-web-template**](https://github.com/dyb-dev/vue-web-template)             | 基于`vue3全家桶`搭建的Web移动端模板             |
 | [**uniapp-mp-wx-template**](https://github.com/dyb-dev/uniapp-mp-wx-template)   | 基于 `uni-app + vue3 + ts` 搭建的微信小程序模板 |
 | [**fn-lib-template**](https://github.com/dyb-dev/fn-lib-template)               | 基于 `vite` 搭建的 TS 函数库模版                |
 | [**component-lib-template**](https://github.com/dyb-dev/component-lib-template) | 基于 `vite` 搭建的 vue3 + ts 组件库模版         |

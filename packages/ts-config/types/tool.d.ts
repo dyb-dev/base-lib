@@ -2,48 +2,134 @@
  * @Author: dyb-dev
  * @Date: 2024-08-28 23:06:16
  * @LastEditors: dyb-dev
- * @LastEditTime: 2025-03-02 16:44:01
+ * @LastEditTime: 2025-06-28 20:25:04
  * @FilePath: /base-lib/packages/ts-config/types/tool.d.ts
  * @Description: ts常用类型工具模块
  */
 
 /**
- * 用于提取元组或对象类型的键，并根据传递的条件进行过滤
+ * 是否为数字字面量类型
  *
- * @template Target - 元组类型或纯对象类型
- * @template Keys - 键的类型，可以是单个键或联合类型，默认为 `never`
- * @template Mode - 决定是排除（"exclude"）还是包含（"include"）这些键，默认值为 "exclude"
- * @returns 根据 Mode 参数返回处理后的键的联合类型
+ * @template Target - 要判断的类型
+ * @returns boolean 是否字面量类型
  *
  * @example
- * // 示例一：对象类型
+ * type Case1 = TIsNumberLiteral<1>;       // true
+ * type Case2 = TIsNumberLiteral<number>;  // false
+ * type Case3 = TIsNumberLiteral<'abc'>;   // false
+ * type Case4 = TIsNumberLiteral<1 | 2>;   // true
+ */
+type TIsNumberLiteral<Target> = [Target] extends [number] ? (number extends Target ? false : true) : false
+
+/**
+ * 提取数字字面量类型
+ *
+ * @template Target - 要处理的类型
+ * @returns 数字字面量类型 或 never
+ *
+ * @example
+ * type Case1 = TExtractNumberLiteral<1>;       // 1
+ * type Case2 = TExtractNumberLiteral<number>;  // never
+ * type Case3 = TExtractNumberLiteral<'abc'>;   // never
+ * type Case4 = TExtractNumberLiteral<1 | 'a'>; // never
+ */
+type TExtractNumberLiteral<Target> = TIsNumberLiteral<Target> extends true ? Target : never
+
+/**
+ * 是否为字符串字面量类型
+ *
+ * @template Target - 要判断的类型
+ * @returns boolean 是否字面量类型
+ *
+ * @example
+ * type Case1 = TIsStringLiteral<'hello'>;  // true
+ * type Case2 = TIsStringLiteral<string>;   // false
+ * type Case3 = TIsStringLiteral<123>;      // false
+ * type Case4 = TIsStringLiteral<'a' | 'b'>;// true
+ */
+type TIsStringLiteral<Target> = [Target] extends [string] ? (string extends Target ? false : true) : false
+
+/**
+ * 提取字符串字面量类型
+ *
+ * @template Target - 要处理的类型
+ * @returns 字符串字面量类型 或 never
+ *
+ * @example
+ * type Case1 = TExtractStringLiteral<'hello'>;  // 'hello'
+ * type Case2 = TExtractStringLiteral<string>;   // never
+ * type Case3 = TExtractStringLiteral<123>;      // never
+ * type Case4 = TExtractStringLiteral<'a' | 1>;  // never
+ */
+type TExtractStringLiteral<Target> = TIsStringLiteral<Target> extends true ? Target : never
+
+/**
+ * 用于递归提取对象或元组类型的键，支持深度控制和条件过滤
+ *
+ * @template CurrentTarget - 当前处理的目标对象或元组类型
+ * @template MaxDepth - 最大递归深度，默认为 1，如需无限递归可传入 number
+ * @template Keys - 要包含/排除的键，默认为 never
+ * @template Mode - 过滤模式："exclude"（排除）或 "include"（包含），默认 "exclude"
+ * @template InitialKeys - 初始键集合的副本（内部使用）
+ * @template CurrentDepth - 当前递归深度记录（内部使用）
+ * @template CurrentTargetKeys - 当前目标的键集合（内部使用）
+ * @template FilteredCurrentTargetKeys - 过滤后的键集合（排除数组方法）（内部使用）
+ * @returns 根据模式和深度处理后的键的联合类型
+ *
+ * @example
+ * // 示例一：对象类型（深度1）
  * type ObjectExample = {
  *     id: number;
  *     name: string;
- *     age: number;
+ *     address: {
+ *         city: string;
+ *         zip: number;
+ *     }
  * };
  *
- * type ExcludedKeys = TKeys<ObjectExample, 'id' | 'name'>;
- * // 结果: "age"（排除 id 和 name 后的剩余键）
- *
- * type IncludedKeys = TKeys<ObjectExample, 'id' | 'name', 'include'>;
- * // 结果: "id" | "name"（仅包含 id 和 name）
+ * type ShallowKeys = TKeys<ObjectExample>;
+ * // 结果: "id" | "name" | "address"（默认深度1）
  *
  * @example
- * // 示例二：数组类型
+ * // 示例二：对象类型（深度2）
+ * type DeepKeys = TKeys<ObjectExample, 2>;
+ * // 结果: "id" | "name" | "address" | "city" | "zip"
+ *
+ * @example
+ * // 示例三：带过滤的条件
+ * type FilteredKeys = TKeys<ObjectExample, 2, 'address', 'exclude'>;
+ * // 结果: "id" | "name"（排除address及其嵌套键）
+ *
+ * @example
+ * // 示例四：数组类型
  * type TupleExample = [string, number, boolean];
  *
  * type TupleKeys = TKeys<TupleExample>;
  * // 结果: "0" | "1" | "2"（数组索引键）
- *
- * type FilteredTupleKeys = TKeys<TupleExample, '0', 'exclude'>;
- * // 结果: "1" | "2"（排除索引 0 后的键）
  */
-declare type TKeys<
-    Target extends readonly any[] | object,
-    Keys extends Exclude<keyof Target, keyof any[]> = never,
-    Mode extends "exclude" | "include" = "exclude"
-> = Mode extends "exclude" ? Exclude<Exclude<keyof Target, keyof any[]>, Keys> : Extract<Exclude<keyof Target, keyof any[]>, Keys>
+type TKeys<
+    CurrentTarget extends readonly any[] | object,
+    MaxDepth extends number = 1,
+    Keys extends TKeys<CurrentTarget, MaxDepth> = never,
+    Mode extends "exclude" | "include" = "exclude",
+    InitialKeys extends PropertyKey = Keys,
+    CurrentDepth extends number[] = [],
+    CurrentTargetKeys extends keyof CurrentTarget = keyof CurrentTarget,
+    FilteredCurrentTargetKeys extends PropertyKey = Exclude<CurrentTargetKeys, keyof any[]>
+> =
+    CurrentDepth["length"] extends TExtractNumberLiteral<MaxDepth>
+        ? never
+        : (
+                Mode extends "exclude"
+                    ? Exclude<FilteredCurrentTargetKeys, InitialKeys>
+                    : Extract<FilteredCurrentTargetKeys, InitialKeys>
+            ) extends infer Key
+          ? Key extends CurrentTargetKeys
+              ? CurrentTarget[Key] extends readonly any[] | object
+                  ? Key | TKeys<CurrentTarget[Key], MaxDepth, never, Mode, InitialKeys, [...CurrentDepth, MaxDepth]>
+                  : Key
+              : never
+          : never
 
 /**
  * 用于生成包含 N 个指定类型的元组类型
@@ -57,7 +143,7 @@ declare type TKeys<
  * type ThreeStrings = TTupleOf<string, 3>;
  * // 结果: [string, string, string]
  */
-declare type TTupleOf<TargetType, Length extends number, Accumulator extends any[] = []> = Accumulator["length"] extends Length
+type TTupleOf<TargetType, Length extends number, Accumulator extends any[] = []> = Accumulator["length"] extends Length
     ? Accumulator
     : TTupleOf<TargetType, Length, [...Accumulator, TargetType]>
 
@@ -76,7 +162,7 @@ declare type TTupleOf<TargetType, Length extends number, Accumulator extends any
  * type RangeTuple = TNumberRangeTuple<1, 3>;
  * // 结果: [1, 2, 3]
  */
-declare type TNumberRangeTuple<
+type TNumberRangeTuple<
     Start extends number,
     End extends number,
     OutputType extends "string" | "number" = "number",
@@ -106,7 +192,7 @@ declare type TNumberRangeTuple<
  * type Range = TNumberRange<1, 3>;
  * // 结果: 1 | 2 | 3
  */
-declare type TNumberRange<Start extends number, End extends number, OutputType extends "string" | "number" = "number"> =
+type TNumberRange<Start extends number, End extends number, OutputType extends "string" | "number" = "number"> =
     TNumberRangeTuple<Start, End, OutputType> extends infer R ? (R extends any[] ? R[number] : never) : never
 
 /**
@@ -127,7 +213,7 @@ declare type TNumberRange<Start extends number, End extends number, OutputType e
  * //     page_3: boolean;
  * // }
  */
-declare type TDynamicProperties<Start extends number, End extends number, KeyPrefix extends string = "", ValueType = string> = {
+type TDynamicProperties<Start extends number, End extends number, KeyPrefix extends string = "", ValueType = string> = {
     [key in `${KeyPrefix}${TNumberRange<Start, End>}`]: ValueType
 }
 
@@ -162,7 +248,7 @@ declare type TDynamicProperties<Start extends number, End extends number, KeyPre
  * //     age?: number;
  * // }
  */
-declare type TModifyProperties<
+type TModifyProperties<
     TargetType,
     Keys extends keyof TargetType,
     Mode extends "optional" | "required" = "optional"
@@ -188,7 +274,7 @@ declare type TModifyProperties<
  * //     age: number;
  * // }
  */
-declare type TAddAffixProperties<
+type TAddAffixProperties<
     Target,
     Affix extends string,
     Position extends "prefix" | "suffix" = "prefix",
@@ -230,9 +316,7 @@ declare type TAddAffixProperties<
  * // ['age', number] |
  * // ['locations', string[] | null]
  */
-declare type TObjectEntries<Target extends Record<string, any>, Key = keyof Target> = Key extends keyof Target
-    ? [Key, Target[Key]]
-    : []
+type TObjectEntries<Target extends Record<string, any>, Key = keyof Target> = Key extends keyof Target ? [Key, Target[Key]] : []
 
 /**
  * 仅保留字面量属性名（排除字符串索引、数字索引、符号索引）
@@ -247,7 +331,7 @@ declare type TObjectEntries<Target extends Record<string, any>, Key = keyof Targ
  * type Result2 = TLiteralKeyOnly<string>;
  * // 结果: never
  */
-declare type TLiteralKeyOnly<Key> = string extends Key
+type TLiteralKeyOnly<Key> = string extends Key
     ? never
     : number extends Key
       ? never
@@ -271,7 +355,7 @@ declare type TLiteralKeyOnly<Key> = string extends Key
  * type Result = TRemoveIndexSignature<Foo>;
  * // 结果: { foo: string }
  */
-declare type TRemoveIndexSignature<Obj> = {
+type TRemoveIndexSignature<Obj> = {
     [Key in keyof Obj as TLiteralKeyOnly<Key>]: Obj[Key]
 }
 
@@ -286,7 +370,7 @@ declare type TRemoveIndexSignature<Obj> = {
  * type perm = TPermutation<'A' | 'B' | 'C'>;
  * // ['A', 'B', 'C'] | ['A', 'C', 'B'] | ['B', 'A', 'C'] | ['B', 'C', 'A'] | ['C', 'A', 'B'] | ['C', 'B', 'A']
  */
-declare type TPermutation<Union, RemainingUnion = Union> = [Union] extends [never]
+type TPermutation<Union, RemainingUnion = Union> = [Union] extends [never]
     ? []
     : RemainingUnion extends RemainingUnion
       ? [RemainingUnion, ...TPermutation<Exclude<Union, RemainingUnion>>]
@@ -302,7 +386,7 @@ declare type TPermutation<Union, RemainingUnion = Union> = [Union] extends [neve
  * type Result = TPromiseParseAll<[Promise<string>, number, Promise<boolean>]>;
  * // 结果: [string, number, boolean]
  */
-declare type TPromiseParseAll<Array extends any[]> = Array extends [infer First, ...infer Rest]
+type TPromiseParseAll<Array extends any[]> = Array extends [infer First, ...infer Rest]
     ? First extends Promise<infer Result>
         ? [Result, ...TPromiseParseAll<Rest>]
         : [First, ...TPromiseParseAll<Rest>]
@@ -318,7 +402,7 @@ declare type TPromiseParseAll<Array extends any[]> = Array extends [infer First,
  * type Result = TPromiseAll<[Promise<string>, number, Promise<boolean>]>;
  * // 结果: Promise<[string, number, boolean]>
  */
-declare type TPromiseAll<Array extends any[]> = Promise<TPromiseParseAll<Array>>
+type TPromiseAll<Array extends any[]> = Promise<TPromiseParseAll<Array>>
 
 /**
  * 去除字符串两端的指定字符（默认为空白字符：空格、换行、制表符）
@@ -334,7 +418,7 @@ declare type TPromiseAll<Array extends any[]> = Promise<TPromiseParseAll<Array>>
  * type TrimmedCustom = TTrim<'---Hello World---', '-'>;
  * // 结果: 'Hello World'
  */
-declare type TTrim<TString extends string, Chars extends string = " " | "\n" | "\t"> = TString extends
+type TTrim<TString extends string, Chars extends string = " " | "\n" | "\t"> = TString extends
     | `${Chars}${infer Rest}`
     | `${infer Rest}${Chars}`
     ? TTrim<Rest, Chars>
@@ -353,7 +437,7 @@ declare type TTrim<TString extends string, Chars extends string = " " | "\n" | "
  * type Result2 = TToNumber<'abc'>;
  * // 结果: 'abc'
  */
-declare type TToNumber<TString> = TString extends `${infer TNumber extends number}` ? TNumber : TString
+type TToNumber<TString> = TString extends `${infer TNumber extends number}` ? TNumber : TString
 
 /**
  * 将联合类型转换为交叉类型
@@ -365,9 +449,7 @@ declare type TToNumber<TString> = TString extends `${infer TNumber extends numbe
  * type Result = TUnionToIntersection<{a: 1} | {b: 2} | {c: 3}>;
  * // 结果: {a: 1} & {b: 2} & {c: 3}
  */
-declare type TUnionToIntersection<Union> = (Union extends any ? (arg: Union) => any : never) extends (
-    arg: infer Intersection
-) => any
+type TUnionToIntersection<Union> = (Union extends any ? (arg: Union) => any : never) extends (arg: infer Intersection) => any
     ? Intersection
     : never
 
@@ -381,8 +463,7 @@ declare type TUnionToIntersection<Union> = (Union extends any ? (arg: Union) => 
  * type Last = TUnionLast<'a' | 'b' | 'c'>;
  * // 结果: 'c'
  */
-declare type TUnionLast<Union> =
-    TUnionToIntersection<Union extends Union ? () => Union : never> extends () => infer Last ? Last : never
+type TUnionLast<Union> = TUnionToIntersection<Union extends Union ? () => Union : never> extends () => infer Last ? Last : never
 
 /**
  * 将联合类型转换为元组类型，顺序为联合类型的自然顺序
@@ -394,7 +475,7 @@ declare type TUnionLast<Union> =
  * type Tuple = TUnionToTuple<'a' | 'b' | 'c'>;
  * // 结果: ['a', 'b', 'c']
  */
-declare type TUnionToTuple<Union> = [Union] extends [never]
+type TUnionToTuple<Union> = [Union] extends [never]
     ? []
     : [...TUnionToTuple<Exclude<Union, TUnionLast<Union>>>, TUnionLast<Union>]
 
@@ -413,7 +494,7 @@ declare type TUnionToTuple<Union> = [Union] extends [never]
  * type Result2 = TEqual<{a: string}, {a: string}>;
  * // 结果: true
  */
-declare type TEqual<Left, Right> = (<T>() => T extends Left ? 1 : 2) extends <T>() => T extends Right ? 1 : 2 ? true : false
+type TEqual<Left, Right> = (<T>() => T extends Left ? 1 : 2) extends <T>() => T extends Right ? 1 : 2 ? true : false
 
 /**
  * 判断类型是否为 never
@@ -425,7 +506,7 @@ declare type TEqual<Left, Right> = (<T>() => T extends Left ? 1 : 2) extends <T>
  * type Result = TIsNever<never>;
  * // 结果: true
  */
-declare type TIsNever<Type> = [Type] extends [never] ? true : false
+type TIsNever<Type> = [Type] extends [never] ? true : false
 
 /**
  * 判断类型是否为联合类型
@@ -438,7 +519,7 @@ declare type TIsNever<Type> = [Type] extends [never] ? true : false
  * type Result = TIsUnion<'a' | 'b' | 'c'>;
  * // 结果: true
  */
-declare type TIsUnion<Type, Base = Type> =
+type TIsUnion<Type, Base = Type> =
     TIsNever<Type> extends true ? false : Type extends Type ? ([Base] extends [Type] ? false : true) : never
 
 /**
@@ -453,7 +534,7 @@ declare type TIsUnion<Type, Base = Type> =
  * type Result = TFlattenDepth<[1, [2, [3, [4]]]], 2>;
  * // 结果: [1, 2, 3, [4]]
  */
-declare type TFlattenDepth<
+type TFlattenDepth<
     Array extends unknown[],
     MaxDepth extends number = 1,
     CurrentDepth extends 1[] = []

@@ -194,7 +194,7 @@ const init = async() => {
         // 初始的 package.json 配置
         const _pkg = { name: packageName, version: "0.0.1" }
         // 写入 package.json 文件
-        writeFileSync(resolve(_tempProjectTemplateDir, "package.json"), JSON.stringify(_pkg, null, 2))
+        writeFileSync(resolve(_tempProjectTemplateDir, "package.json"), JSON.stringify(_pkg, null, 4))
 
         // 渲染模板
         const render = (templateName: string) => {

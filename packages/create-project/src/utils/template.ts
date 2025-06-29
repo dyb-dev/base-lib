@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-10-20 01:37:25
  * @LastEditors: dyb-dev
- * @LastEditTime: 2025-01-28 04:14:21
+ * @LastEditTime: 2025-06-29 21:55:56
  * @FilePath: /base-lib/packages/create-project/src/utils/template.ts
  * @Description: 模板相关工具函数
  */
@@ -134,7 +134,7 @@ const renderTemplate = (src: string, dest: string) => {
             const _existing = JSON.parse(readFileSync(dest, "utf8"))
             const _newContent = JSON.parse(readFileSync(src, "utf8"))
             const _merged = mergeFunc(_existing, _newContent)
-            writeFileSync(dest, JSON.stringify(_merged, null, 2) + "\n")
+            writeFileSync(dest, JSON.stringify(_merged, null, 4) + "\n")
             return true
 
         }

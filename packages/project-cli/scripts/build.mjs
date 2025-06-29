@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-10-21 16:44:36
  * @LastEditors: dyb-dev
- * @LastEditTime: 2024-10-21 23:01:04
+ * @LastEditTime: 2025-06-29 23:53:45
  * @FilePath: /base-lib/packages/project-cli/scripts/build.mjs
  * @Description: 构建脚本
  */
@@ -22,5 +22,33 @@ build({
     // 目标平台为 Node.js
     platform: "node",
     // 目标 Node.js 版本为 14.16.0+
-    target: "node14"
+    target: "node14",
+    // 需要排除的模块
+    external: ["electron"],
+    // 插件列表
+    plugins: [
+        {
+            // 插件的名称
+            name: "alias",
+            // 插件的行为
+            setup({ onResolve, resolve }) {
+
+                // 通过过滤正则表达式，匹配 'prompts' 模块并进行别名解析
+                onResolve({ filter: /^prompts$/, namespace: "file" }, async({ importer, resolveDir }) => {
+
+                    // 使用自定义逻辑指定解析 'prompts/lib/index.js' 模块，构建结果大小减少 50%
+                    const result = await resolve("prompts/lib/index.js", {
+                        importer,
+                        resolveDir,
+                        kind: "import-statement"
+                    })
+
+                    // 返回解析结果
+                    return result
+
+                })
+
+            }
+        }
+    ]
 })

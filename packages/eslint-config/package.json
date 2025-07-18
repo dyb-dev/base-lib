@@ -1,6 +1,6 @@
 {
     "name": "@dyb-dev/eslint-config",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "description": "Eslint 配置",
     "author": "dyb-dev",
     "license": "MIT",

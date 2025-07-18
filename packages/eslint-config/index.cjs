@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-08-21 12:17:43
  * @LastEditors: dyb-dev
- * @LastEditTime: 2025-02-22 15:41:02
+ * @LastEditTime: 2025-07-18 23:41:10
  * @FilePath: /base-lib/packages/eslint-config/index.cjs
  * @Description: Eslint 配置
  */
@@ -70,7 +70,7 @@ module.exports = {
                 // 禁止在嵌套的块中出现变量声明或 function 声明
                 "no-inner-declarations": "error",
                 // 强制在 function的左括号之前使用一致的空格
-                "space-before-function-paren": ["error", "never"],
+                "space-before-function-paren": ["error", "always"],
                 // 禁止尾部使用分号
                 semi: ["error", "never"],
                 // 强制把变量的使用限制在其定义的作用域范围内

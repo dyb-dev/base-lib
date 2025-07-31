@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-10-20 01:03:34
  * @LastEditors: dyb-dev
- * @LastEditTime: 2025-07-31 20:55:59
+ * @LastEditTime: 2025-07-31 23:51:40
  * @FilePath: /base-lib/packages/create-project/src/constants/project.ts
  * @Description: 项目模板相关常量
  */
@@ -10,10 +10,10 @@
 import prompts from "prompts"
 
 /** STATIC: 默认项目名称 */
-const DEFAULT_PROJECT_NAME = "default-project"
+export const DEFAULT_PROJECT_NAME = "default-project"
 
 /** STATIC: 项目模板列表 */
-const PROJECT_TEMPLATE_LIST = [
+export const PROJECT_TEMPLATE_LIST = [
     {
         title: "next-ssr-web-template",
         description: "基于`Next.js`搭建的 SSR Web 模板",
@@ -50,5 +50,3 @@ const PROJECT_TEMPLATE_LIST = [
         value: "https://github.com/dyb-dev/lib-docs-template.git"
     }
 ] as prompts.Choice[]
-
-export { DEFAULT_PROJECT_NAME, PROJECT_TEMPLATE_LIST }

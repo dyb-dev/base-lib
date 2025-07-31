@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-10-20 01:42:33
  * @LastEditors: dyb-dev
- * @LastEditTime: 2024-10-20 02:48:21
+ * @LastEditTime: 2025-07-31 23:52:13
  * @FilePath: /base-lib/packages/create-project/src/utils/obj.ts
  * @Description: 对象相关工具函数
  */
@@ -15,7 +15,7 @@
  * @param {*} val - 任意值
  * @returns {*} {boolean} - 返回是否为对象
  */
-const isObject = (val: any) => val && typeof val === "object"
+export const isObject = (val: any) => val && typeof val === "object"
 
 /**
  * FUN: 合并数组并去重
@@ -26,7 +26,7 @@ const isObject = (val: any) => val && typeof val === "object"
  * @param {any[]} b 目标数组2
  * @returns {*} {any[]} - 返回合并后的数组
  */
-const mergeArrayWithDedupe = (a: any[], b: any[]) => Array.from(new Set([...a, ...b]))
+export const mergeArrayWithDedupe = (a: any[], b: any[]) => Array.from(new Set([...a, ...b]))
 
 /**
  * FUN: 深度合并对象
@@ -37,7 +37,7 @@ const mergeArrayWithDedupe = (a: any[], b: any[]) => Array.from(new Set([...a, .
  * @param {{ [x: string]: any }} obj 待合并的对象
  * @returns {*} {any} - 返回合并后的对象
  */
-const deepMerge = (target: { [x: string]: any }, obj: { [x: string]: any }) => {
+export const deepMerge = (target: { [x: string]: any }, obj: { [x: string]: any }) => {
 
     // 遍历新对象的所有键
     for (const key of Object.keys(obj)) {
@@ -71,4 +71,3 @@ const deepMerge = (target: { [x: string]: any }, obj: { [x: string]: any }) => {
     return target
 
 }
-export { isObject, mergeArrayWithDedupe, deepMerge }

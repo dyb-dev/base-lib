@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-10-20 01:44:49
  * @LastEditors: dyb-dev
- * @LastEditTime: 2024-10-20 01:54:01
+ * @LastEditTime: 2025-07-31 23:52:26
  * @FilePath: /base-lib/packages/create-project/src/utils/package.ts
  * @Description: 包相关工具函数
  */
@@ -15,7 +15,7 @@
  * @param {*} packageName - 包名
  * @returns {*}  {boolean} - 返回是否是一个合法的 npm 包名
  */
-const isValidPackageName = (packageName: any): boolean =>
+export const isValidPackageName = (packageName: any): boolean =>
     /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/.test(packageName)
 
 /**
@@ -26,7 +26,7 @@ const isValidPackageName = (packageName: any): boolean =>
  * @param {string} packageName - 包名
  * @returns {*}  {string} - 返回有效的包名
  */
-const toValidPackageName = (packageName: string): string =>
+export const toValidPackageName = (packageName: string): string =>
     packageName
         .trim()
         .toLowerCase()
@@ -44,7 +44,7 @@ const toValidPackageName = (packageName: string): string =>
  * @param {Record<string,any>} packageJson - package.json 对象
  * @returns {*} {Record<string,any>} - 排序后的 package.json 对象
  */
-const sortDependencies = (packageJson: Record<string, any>) => {
+export const sortDependencies = (packageJson: Record<string, any>) => {
 
     // 存储排序后的结果
     const _sorted: any = {}
@@ -93,7 +93,7 @@ const sortDependencies = (packageJson: Record<string, any>) => {
  * @param {string} [args] - 参数
  * @returns {*}  {string} - 命令
  */
-const getCommand = (packageManager: string, scriptName: string, args?: string): string => {
+export const getCommand = (packageManager: string, scriptName: string, args?: string): string => {
 
     if (scriptName === "install") {
 
@@ -109,5 +109,3 @@ const getCommand = (packageManager: string, scriptName: string, args?: string): 
     return packageManager === "npm" ? `npm run ${scriptName}` : `${packageManager} ${scriptName}`
 
 }
-
-export { isValidPackageName, toValidPackageName, sortDependencies, getCommand }

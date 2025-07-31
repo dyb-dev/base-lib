@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-10-20 01:37:25
  * @LastEditors: dyb-dev
- * @LastEditTime: 2025-06-29 21:55:56
+ * @LastEditTime: 2025-07-31 23:52:44
  * @FilePath: /base-lib/packages/create-project/src/utils/template.ts
  * @Description: 模板相关工具函数
  */
@@ -25,7 +25,7 @@ import { sortDependencies, deepMerge } from "./index"
  * @param {string} url - 模板地址，Git 仓库的 URL
  * @returns {Promise<boolean>} - 返回一个 Promise，表示模板是否下载成功
  */
-const downloadTemplate = (projectRootDir: string, url: string): Promise<boolean> => {
+export const downloadTemplate = (projectRootDir: string, url: string): Promise<boolean> => {
 
     return new Promise((resolve, reject) => {
 
@@ -89,7 +89,7 @@ const downloadTemplate = (projectRootDir: string, url: string): Promise<boolean>
  * @param {string} src 源路径
  * @param {string} dest 目标路径
  */
-const renderTemplate = (src: string, dest: string) => {
+export const renderTemplate = (src: string, dest: string) => {
 
     // 获取源路径的文件信息
     const _stats = statSync(src)
@@ -179,5 +179,3 @@ const renderTemplate = (src: string, dest: string) => {
     copyFileSync(src, dest)
 
 }
-
-export { renderTemplate, downloadTemplate }

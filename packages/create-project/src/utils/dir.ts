@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-10-20 01:43:18
  * @LastEditors: dyb-dev
- * @LastEditTime: 2024-10-20 02:48:14
+ * @LastEditTime: 2025-07-31 23:52:02
  * @FilePath: /base-lib/packages/create-project/src/utils/dir.ts
  * @Description: 目录相关工具函数
  */
@@ -19,7 +19,7 @@ import { resolve } from "node:path"
  * @param {string} dir - 需要检查的目录路径
  * @returns {*} {boolean} - 如果可以跳过清空返回 true，否则返回 false
  */
-const canSkipEmptying = (dir: string): boolean => {
+export const canSkipEmptying = (dir: string): boolean => {
 
     // 如果目录不存在，返回 true，表示可以跳过清空（因为没有需要清空的内容）
     if (!existsSync(dir)) {
@@ -57,7 +57,7 @@ const canSkipEmptying = (dir: string): boolean => {
  * @date 19/10/2024/  22:39:09
  * @param {string} dir - 目录
  */
-const emptyDir = (dir: string): void => {
+export const emptyDir = (dir: string): void => {
 
     // 如果目录不存在，直接返回
     if (!existsSync(dir)) {
@@ -84,7 +84,7 @@ const emptyDir = (dir: string): void => {
  * @param dirCallback - 目录回调
  * @param fileCallback - 文件回调
  */
-const postOrderDirectoryTraverse = (
+export const postOrderDirectoryTraverse = (
     dir: string,
     dirCallback: { (dir: string): void; (arg0: string): void },
     fileCallback: { (file: string): void; (arg0: string): void }
@@ -117,5 +117,3 @@ const postOrderDirectoryTraverse = (
     }
 
 }
-
-export { canSkipEmptying, emptyDir, postOrderDirectoryTraverse }

@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-12-11 17:22:25
  * @LastEditors: dyb-dev
- * @LastEditTime: 2025-02-10 20:05:24
+ * @LastEditTime: 2025-07-31 23:52:59
  * @FilePath: /base-lib/packages/project-cli/src/commands/release.ts
  * @Description: 发布执行函数
  */
@@ -77,7 +77,7 @@ interface IVersionReleaseResponse {
  * @param {string} version 当前版本号
  * @returns {Promise<string>} 发布版本号
  */
-const getReleaseVersion = async(version: string): Promise<string> => {
+const getReleaseVersion = async (version: string): Promise<string> => {
 
     /** 发布版本号 */
     let _releaseVersion = ""
@@ -287,7 +287,7 @@ interface ICommitGitChangesResponse {
  * @date 27/01/2025/  21:01:01
  * @param {string} version - 版本号
  */
-const commitGitChanges = async(version: string) => {
+const commitGitChanges = async (version: string) => {
 
     // 选择git提交信息类型
     const _response: ICommitGitChangesResponse = await prompts([
@@ -574,7 +574,7 @@ const getEnvInfo = (): IEnvInfo => {
  * @date 11/12/2024/  20:21:38
  * @returns {*} {Promise<void>}
  */
-const release = async(): Promise<void> => {
+export const release = async (): Promise<void> => {
 
     try {
 
@@ -670,5 +670,3 @@ const release = async(): Promise<void> => {
     }
 
 }
-
-export { release }

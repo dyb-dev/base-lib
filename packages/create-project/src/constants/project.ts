@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-10-20 01:03:34
  * @LastEditors: dyb-dev
- * @LastEditTime: 2025-02-22 20:06:02
+ * @LastEditTime: 2025-07-31 20:55:59
  * @FilePath: /base-lib/packages/create-project/src/constants/project.ts
  * @Description: 项目模板相关常量
  */
@@ -14,6 +14,11 @@ const DEFAULT_PROJECT_NAME = "default-project"
 
 /** STATIC: 项目模板列表 */
 const PROJECT_TEMPLATE_LIST = [
+    {
+        title: "next-ssr-web-template",
+        description: "基于`Next.js`搭建的 SSR Web 模板",
+        value: "https://github.com/dyb-dev/next-ssr-web-template.git"
+    },
     {
         title: "react-web-template",
         description: "基于`react全家桶`搭建的Web移动端模板",

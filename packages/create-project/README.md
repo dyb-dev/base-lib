@@ -34,6 +34,7 @@ pnpm create @dyb-dev/create-project my-project --force
 
 | 项目模板                                                                        | 描述                                            |
 | ------------------------------------------------------------------------------- | ----------------------------------------------- |
+| [**next-ssr-web-template**](https://github.com/dyb-dev/next-ssr-web-template)   | 基于`Next.js`搭建的 SSR Web 模板                |
 | [**react-web-template**](https://github.com/dyb-dev/react-web-template)         | 基于`react全家桶`搭建的Web移动端模板            |
 | [**vue-web-template**](https://github.com/dyb-dev/vue-web-template)             | 基于`vue3全家桶`搭建的Web移动端模板             |
 | [**uniapp-mp-wx-template**](https://github.com/dyb-dev/uniapp-mp-wx-template)   | 基于 `uni-app + vue3 + ts` 搭建的微信小程序模板 |

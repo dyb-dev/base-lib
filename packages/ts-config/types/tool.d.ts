@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-08-28 23:06:16
  * @LastEditors: dyb-dev
- * @LastEditTime: 2025-06-28 20:25:04
+ * @LastEditTime: 2025-08-16 12:43:07
  * @FilePath: /base-lib/packages/ts-config/types/tool.d.ts
  * @Description: ts常用类型工具模块
  */
@@ -507,6 +507,20 @@ type TEqual<Left, Right> = (<T>() => T extends Left ? 1 : 2) extends <T>() => T 
  * // 结果: true
  */
 type TIsNever<Type> = [Type] extends [never] ? true : false
+
+/**
+ * 判断类型是否为 any
+ *
+ * @template Type - 要判断的类型
+ * @returns 如果类型为 any，则返回 true；否则返回 false
+ *
+ * @example
+ * type Result1 = TIsAny<any>;      // true
+ * type Result2 = TIsAny<number>;   // false
+ * type Result3 = TIsAny<unknown>;  // false
+ * type Result4 = TIsAny<never>;    // false
+ */
+type TIsAny<Type> = 0 extends 1 & Type ? true : false
 
 /**
  * 判断类型是否为联合类型

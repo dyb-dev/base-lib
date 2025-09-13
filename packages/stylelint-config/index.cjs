@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-08-28 14:32:57
  * @LastEditors: dyb-dev
- * @LastEditTime: 2024-09-05 20:57:27
+ * @LastEditTime: 2025-09-14 01:05:50
  * @FilePath: /base-lib/packages/stylelint-config/index.cjs
  * @Description: Stylelint 配置
  */
@@ -87,6 +87,10 @@ module.exports = {
             files: ["**/*.less"],
             customSyntax: "postcss-less",
             extends: ["stylelint-config-recommended-less"]
+        },
+        {
+            files: ["**/*.module.{css,scss,less}"],
+            extends: ["stylelint-config-css-modules"]
         }
     ]
 }

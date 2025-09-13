@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-08-21 12:17:43
  * @LastEditors: dyb-dev
- * @LastEditTime: 2025-07-18 23:41:10
+ * @LastEditTime: 2025-09-13 14:04:31
  * @FilePath: /base-lib/packages/eslint-config/index.cjs
  * @Description: Eslint 配置
  */
@@ -123,8 +123,8 @@ module.exports = {
                 "no-delete-var": "off",
                 // 允许变量声明与外层作用域的变量同名
                 "no-shadow": "off",
-                // 要求尽可能地使用点号
-                "dot-notation": "error",
+                // 允许对象属性使用点号和中括号两种形式
+                "dot-notation": "off",
                 // 要求switch语句中有default分支
                 "default-case": "off",
                 // 要求在块之前使用一致的空格

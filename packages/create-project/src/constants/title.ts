@@ -11,10 +11,10 @@ import gradientString from "gradient-string"
 
 import { version, description } from "../../package.json"
 
-/** STATIC: 默认标题 */
+/** CONST: 默认标题 */
 export const DEFAULT_TITLE = `${description} v${version}`
 
-/** STATIC: 渐变色的标题 */
+/** CONST: 渐变色的标题 */
 export const GRADIENT_TITLE = gradientString([
     { color: "#42b883", pos: 0 },
     { color: "#42b883", pos: 0.1 },

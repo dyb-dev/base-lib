@@ -9,10 +9,10 @@
 
 import prompts from "prompts"
 
-/** STATIC: 默认项目名称 */
+/** CONST: 默认项目名称 */
 export const DEFAULT_PROJECT_NAME = "default-project"
 
-/** STATIC: 项目模板列表 */
+/** CONST: 项目模板列表 */
 export const PROJECT_TEMPLATE_LIST = [
     {
         title: "next-ssr-web-template",

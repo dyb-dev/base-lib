@@ -2,7 +2,7 @@
  * @Author: dyb-dev
  * @Date: 2024-10-21 21:51:16
  * @LastEditors: dyb-dev
- * @LastEditTime: 2025-07-31 23:52:51
+ * @LastEditTime: 2025-11-01 11:19:08
  * @FilePath: /base-lib/packages/project-cli/src/commands/commitLint.ts
  * @Description: git提交信息校验执行函数
  */
@@ -10,7 +10,7 @@
 import { readFileSync } from "node:fs"
 
 /**
- * STATIC: 提交效验正则
+ * CONST: 提交效验正则
  * - init: 项目初始化
  * - feat: 添加新特性
  * - fix: 修复bug
@@ -28,7 +28,7 @@ import { readFileSync } from "node:fs"
 const commitRE =
     /^(revert: )?((\p{Emoji})(\s))?(init|feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert|type)(\(.+\))?:\s.{1,60}$/u
 
-/** STATIC: 合并效验正则 */
+/** CONST: 合并效验正则 */
 const mergeRE = /Merge /
 
 /**

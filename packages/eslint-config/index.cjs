@@ -340,13 +340,6 @@ module.exports = {
         },
         // #endregion
 
-        // #region CODE: unocss 配置
-        {
-            files: ["**/*.vue", "**/*.jsx", "**/*.tsx"],
-            extends: ["@unocss"]
-        },
-        // #endregion
-
         // #region CODE: json、jsonc 配置
         {
             files: ["**/*.json", "**/*.jsonc"],

@@ -8,13 +8,13 @@
 
 ```shell
 # 使用 npm
-npm install @dyb-dev/stylelint-config -D
+npm install @dyb-dev/stylelint-config@latest -D
 
 # 使用 pnpm
-pnpm add @dyb-dev/stylelint-config -D
+pnpm add @dyb-dev/stylelint-config@latest -D
 
 # 使用 yarn
-yarn add @dyb-dev/stylelint-config -D
+yarn add @dyb-dev/stylelint-config@latest -D
 ```
 
 ## 使用方法

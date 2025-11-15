@@ -12,7 +12,7 @@
 该工具支持使用 `npm`、`pnpm`、`yarn` 和 `bun` 来安装。以下示例使用 `pnpm`：
 
 ```bash
-pnpm i @dyb-dev/project-cli -D
+pnpm i @dyb-dev/project-cli@latest -D
 ```
 
 ## 版本
@@ -38,7 +38,7 @@ project-cli -h
 首先，第一步安装 `husky`:
 
 ```bash
-pnpm i husky -D
+pnpm i husky@latest -D
 ```
 
 然后在 `package.json` 中添加以下脚本:

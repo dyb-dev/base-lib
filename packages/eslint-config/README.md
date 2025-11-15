@@ -10,13 +10,13 @@
 
 ```shell
 # 使用 npm
-npm install @dyb-dev/eslint-config -D
+npm install @dyb-dev/eslint-config@latest -D
 
 # 使用 pnpm
-pnpm add @dyb-dev/eslint-config -D
+pnpm add @dyb-dev/eslint-config@latest -D
 
 # 使用 yarn
-yarn add @dyb-dev/eslint-config -D
+yarn add @dyb-dev/eslint-config@latest -D
 ```
 
 ## 使用方法
@@ -27,9 +27,7 @@ yarn add @dyb-dev/eslint-config -D
 
 ```json
 {
-    "extends": [
-        "@dyb-dev/eslint-config"
-    ]
+    "extends": ["@dyb-dev/eslint-config"]
 }
 ```
 
@@ -37,9 +35,7 @@ yarn add @dyb-dev/eslint-config -D
 
 ```js
 module.exports = {
-    extends: [
-        "@dyb-dev/eslint-config"
-    ]
+    extends: ["@dyb-dev/eslint-config"]
 }
 ```
 

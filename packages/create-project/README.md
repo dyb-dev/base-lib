@@ -12,7 +12,7 @@
 该工具支持使用 `npm`、`pnpm`、`yarn` 和 `bun` 来构建项目。以下示例使用 `pnpm`：
 
 ```bash
-pnpm create @dyb-dev/create-project
+pnpm create @dyb-dev/create-project@latest
 ```
 
 该命令将触发交互式 CLI，您可以按照提示进行操作，包括选择项目名称、包名以及项目模板。
@@ -25,7 +25,7 @@ pnpm create @dyb-dev/create-project
 命令行示例：
 
 ```bash
-pnpm create @dyb-dev/create-project my-project --force
+pnpm create @dyb-dev/create-project@latest my-project --force
 ```
 
 ## 支持的项目模板

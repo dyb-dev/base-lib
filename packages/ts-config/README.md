@@ -8,13 +8,13 @@
 
 ```shell
 # 使用 npm
-npm install @dyb-dev/ts-config -D
+npm install @dyb-dev/ts-config@latest -D
 
 # 使用 pnpm
-pnpm add @dyb-dev/ts-config -D
+pnpm add @dyb-dev/ts-config@latest -D
 
 # 使用 yarn
-yarn add @dyb-dev/ts-config -D
+yarn add @dyb-dev/ts-config@latest -D
 ```
 
 ## 使用方法

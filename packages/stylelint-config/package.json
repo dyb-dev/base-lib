@@ -1,6 +1,6 @@
 {
     "name": "@dyb-dev/stylelint-config",
-    "version": "0.0.6",
+    "version": "0.0.8",
     "description": "Stylelint 配置",
     "author": "dyb-dev",
     "license": "MIT",
@@ -62,6 +62,6 @@
         "stylelint-prettier": "^5.0.0"
     },
     "peerDependencies": {
-        "stylelint": "^16.2.1"
+        "stylelint": "^16.25.0"
     }
 }

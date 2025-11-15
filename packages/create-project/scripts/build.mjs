@@ -1,10 +1,5 @@
 /*
- * @author: dyb-dev
- * @date: 19/10/2024/ 19:10:98
- * @lastAuthor: dyb-dev
- * @lastEditTime: 19/10/2024/ 19:10:49
- * @filePath: /base-lib/packages/create-project/scripts/build.mjs
- * @description: 构建脚本
+ * @FileDesc: 构建脚本
  */
 
 import { build } from "esbuild"
@@ -31,10 +26,10 @@ build({
             // 插件的名称
             name: "alias",
             // 插件的行为
-            setup({ onResolve, resolve }) {
+            setup ({ onResolve, resolve }) {
 
                 // 通过过滤正则表达式，匹配 'prompts' 模块并进行别名解析
-                onResolve({ filter: /^prompts$/, namespace: "file" }, async({ importer, resolveDir }) => {
+                onResolve({ filter: /^prompts$/, namespace: "file" }, async ({ importer, resolveDir }) => {
 
                     // 使用自定义逻辑指定解析 'prompts/lib/index.js' 模块，构建结果大小减少 50%
                     const result = await resolve("prompts/lib/index.js", {

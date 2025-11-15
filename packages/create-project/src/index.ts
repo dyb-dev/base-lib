@@ -1,10 +1,5 @@
 /*
- * @author: dyb-dev
- * @date: 19/10/2024/ 15:10:99
- * @lastAuthor: dyb-dev
- * @lastEditTime: 19/10/2024/ 22:10:16
- * @filePath: /base-lib/packages/create-project/src/index.ts
- * @description: 程序入口文件
+ * @FileDesc: 程序入口文件
  */
 
 import { existsSync, rmdirSync, mkdirSync, writeFileSync } from "node:fs"
@@ -31,7 +26,7 @@ import {
  * @author dyb-dev
  * @date 19/10/2024/  20:10:42
  */
-const init = async() => {
+const init = async () => {
 
     try {
 

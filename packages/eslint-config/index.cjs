@@ -6,6 +6,7 @@ module.exports = {
     root: true,
 
     env: {
+        // 启用ES2021特性
         es2021: true,
         // 启用ES6特性
         es6: true,
@@ -165,6 +166,7 @@ module.exports = {
 
                 // 忽略虚拟模块
                 "import/no-unresolved": ["error", { ignore: ["^virtual:", "@", "#", "~"] }],
+                // 强制模块导入顺序
                 "import/order": [
                     "error",
                     {
@@ -227,18 +229,24 @@ module.exports = {
             }
         },
         // #endregion
+
         // #region CODE: ts 配置
         {
             files: ["**/*.ts", "**/*.d.ts", "**/*.vue", "**/*.tsx"],
-            extends: [
-                // 继承TypeScript官方推荐的规则
-                "plugin:@typescript-eslint/recommended"
-            ],
+            extends: ["plugin:@typescript-eslint/recommended"],
             parserOptions: {
-                parser: "@typescript-eslint/parser", // 使用TypeScript解析器，以支持TypeScript语法
-                ecmaVersion: 2019, // 使用2019版本的ECMAScript标准
-                sourceType: "module", // 代码使用ES模块
-                extraFileExtensions: [".vue"] // 额外处理.vue文件
+                // 使用TypeScript解析器，以支持TypeScript语法
+                parser: "@typescript-eslint/parser",
+                // 使用2019版本的ECMAScript标准
+                ecmaVersion: 2019,
+                // 代码使用ES模块
+                sourceType: "module",
+                // 额外处理.vue文件
+                extraFileExtensions: [".vue"],
+                ecmaFeatures: {
+                    // 启用 JSX 语法支持
+                    jsx: true
+                }
             },
             rules: {
                 // 禁用不允许显式使用any类型的规则
@@ -264,19 +272,18 @@ module.exports = {
             }
         },
         // #endregion
+
         // #region CODE: react 配置
         {
             files: ["**/*.js", "**/*.ts", "**/*.jsx", "**/*.tsx"],
             extends: ["plugin:react-hooks/recommended"]
         },
         // #endregion
+
         // #region CODE: vue 配置
         {
             files: ["**/*.vue"],
-            extends: [
-                // 继承Vue 3官方推荐的规则
-                "plugin:vue/vue3-recommended"
-            ],
+            extends: ["plugin:vue/vue3-recommended"],
             rules: {
                 // 强制组件使用emit事件名为 camelCase 或者 kebab-case 格式
                 "vue/custom-event-name-casing": ["error", "kebab-case"],
@@ -332,14 +339,20 @@ module.exports = {
             }
         },
         // #endregion
+
+        // #region CODE: unocss 配置
+        {
+            files: ["**/*.vue", "**/*.jsx", "**/*.tsx"],
+            extends: ["@unocss"]
+        },
+        // #endregion
+
         // #region CODE: json、jsonc 配置
         {
             files: ["**/*.json", "**/*.jsonc"],
-            extends: [
-                // 对json文件的规则
-                "plugin:jsonc/recommended-with-jsonc"
-            ],
+            extends: ["plugin:jsonc/recommended-with-jsonc"],
             rules: {
+                // 缩进4个空格
                 "jsonc/indent": ["error", 4]
             }
         }

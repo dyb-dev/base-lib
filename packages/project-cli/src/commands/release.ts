@@ -1,10 +1,5 @@
 /*
- * @Author: dyb-dev
- * @Date: 2024-12-11 17:22:25
- * @LastEditors: dyb-dev
- * @LastEditTime: 2025-07-31 23:52:59
- * @FilePath: /base-lib/packages/project-cli/src/commands/release.ts
- * @Description: 发布执行函数
+ * @FileDesc: 发布执行函数
  */
 
 import { execSync } from "child_process"

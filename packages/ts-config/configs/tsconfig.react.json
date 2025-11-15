@@ -1,10 +1,5 @@
 /*
- * @Author: dyb-dev
- * @Date: 2025-02-11 16:59:54
- * @LastEditors: dyb-dev
- * @LastEditTime: 2025-02-11 17:03:53
- * @FilePath: /base-lib/packages/ts-config/configs/tsconfig.react.json
- * @Description: ts react 配置
+ * @FileDesc: ts react 配置
  */
 
 {

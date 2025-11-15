@@ -1,10 +1,5 @@
 /*
- * @Author: dyb-dev
- * @Date: 2024-10-21 21:51:16
- * @LastEditors: dyb-dev
- * @LastEditTime: 2025-11-01 11:19:08
- * @FilePath: /base-lib/packages/project-cli/src/commands/commitLint.ts
- * @Description: git提交信息校验执行函数
+ * @FileDesc: git提交信息校验执行函数
  */
 
 import { readFileSync } from "node:fs"

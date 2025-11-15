@@ -1,10 +1,5 @@
 /*
- * @Author: dyb-dev
- * @Date: 2024-10-20 01:43:18
- * @LastEditors: dyb-dev
- * @LastEditTime: 2025-07-31 23:52:02
- * @FilePath: /base-lib/packages/create-project/src/utils/dir.ts
- * @Description: 目录相关工具函数
+ * @FileDesc: 目录相关工具函数
  */
 
 import { existsSync, lstatSync, readdirSync, rmdirSync, unlinkSync } from "node:fs"

@@ -1,10 +1,5 @@
 /*
- * @Author: dyb-dev
- * @Date: 2024-10-20 01:42:33
- * @LastEditors: dyb-dev
- * @LastEditTime: 2025-07-31 23:52:13
- * @FilePath: /base-lib/packages/create-project/src/utils/obj.ts
- * @Description: 对象相关工具函数
+ * @FileDesc: 对象相关工具函数
  */
 
 /**

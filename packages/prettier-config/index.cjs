@@ -1,10 +1,5 @@
 /*
- * @Author: dyb-dev
- * @Date: 2024-08-27 20:52:09
- * @LastEditors: dyb-dev
- * @LastEditTime: 2024-08-27 22:50:43
- * @FilePath: /base-lib/packages/prettier-config/index.cjs
- * @Description: Prettier 配置
+ * @FileDesc: Prettier 配置
  */
 
 module.exports = {

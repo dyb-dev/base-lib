@@ -1,10 +1,5 @@
 /*
- * @Author: dyb-dev
- * @Date: 2024-08-28 22:11:18
- * @LastEditors: dyb-dev
- * @LastEditTime: 2024-08-30 16:37:30
- * @FilePath: /base-lib/packages/ts-config/configs/tsconfig.base.json
- * @Description: ts基础配置
+ * @FileDesc: ts基础配置
  */
 
 {

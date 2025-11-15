@@ -1,10 +1,5 @@
 /*
- * @Author: dyb-dev
- * @Date: 2024-10-21 16:44:36
- * @LastEditors: dyb-dev
- * @LastEditTime: 2025-06-29 23:53:45
- * @FilePath: /base-lib/packages/project-cli/scripts/build.mjs
- * @Description: 构建脚本
+ * @FileDesc: 构建脚本
  */
 
 import { build } from "esbuild"

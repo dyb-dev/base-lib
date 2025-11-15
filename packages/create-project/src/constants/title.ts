@@ -1,10 +1,5 @@
 /*
- * @Author: dyb-dev
- * @Date: 2024-10-20 01:04:30
- * @LastEditors: dyb-dev
- * @LastEditTime: 2025-07-31 23:51:49
- * @FilePath: /base-lib/packages/create-project/src/constants/title.ts
- * @Description: 标题相关常量
+ * @FileDesc: 标题相关常量
  */
 
 import gradientString from "gradient-string"

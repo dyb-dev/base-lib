@@ -1,10 +1,5 @@
 /*
- * @Author: dyb-dev
- * @Date: 2024-10-20 01:05:25
- * @LastEditors: dyb-dev
- * @LastEditTime: 2024-10-20 16:52:15
- * @FilePath: /base-lib/packages/create-project/src/utils/index.ts
- * @Description: 工具函数模块
+ * @FileDesc: 工具函数模块
  */
 
 /** 导出目录相关工具函数 */

@@ -1,10 +1,5 @@
 /*
- * @Author: dyb-dev
- * @Date: 2024-08-21 12:17:43
- * @LastEditors: dyb-dev
- * @LastEditTime: 2025-09-13 14:04:31
- * @FilePath: /base-lib/packages/eslint-config/index.cjs
- * @Description: Eslint 配置
+ * @FileDesc: Eslint 配置
  */
 
 module.exports = {

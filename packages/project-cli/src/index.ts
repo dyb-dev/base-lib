@@ -1,10 +1,5 @@
 /*
- * @Author: dyb-dev
- * @Date: 2024-10-21 16:19:02
- * @LastEditors: dyb-dev
- * @LastEditTime: 2024-12-11 20:26:38
- * @FilePath: /base-lib/packages/project-cli/src/index.ts
- * @Description: 程序入口文件
+ * @FileDesc: 程序入口文件
  */
 
 import { Command } from "commander"

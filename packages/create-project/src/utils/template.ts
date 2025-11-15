@@ -1,10 +1,5 @@
 /*
- * @Author: dyb-dev
- * @Date: 2024-10-20 01:37:25
- * @LastEditors: dyb-dev
- * @LastEditTime: 2025-07-31 23:52:44
- * @FilePath: /base-lib/packages/create-project/src/utils/template.ts
- * @Description: 模板相关工具函数
+ * @FileDesc: 模板相关工具函数
  */
 
 import { exec } from "node:child_process"

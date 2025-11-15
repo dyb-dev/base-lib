@@ -1,10 +1,5 @@
 /*
- * @Author: dyb-dev
- * @Date: 2024-08-28 23:06:16
- * @LastEditors: dyb-dev
- * @LastEditTime: 2025-08-16 12:43:07
- * @FilePath: /base-lib/packages/ts-config/types/tool.d.ts
- * @Description: ts常用类型工具模块
+ * @FileDesc: ts常用类型工具模块
  */
 
 /**

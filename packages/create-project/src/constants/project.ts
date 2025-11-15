@@ -1,10 +1,5 @@
 /*
- * @Author: dyb-dev
- * @Date: 2024-10-20 01:03:34
- * @LastEditors: dyb-dev
- * @LastEditTime: 2025-07-31 23:51:40
- * @FilePath: /base-lib/packages/create-project/src/constants/project.ts
- * @Description: 项目模板相关常量
+ * @FileDesc: 项目模板相关常量
  */
 
 import prompts from "prompts"

@@ -1,10 +1,5 @@
 /*
- * @Author: dyb-dev
- * @Date: 2024-08-28 23:08:01
- * @LastEditors: dyb-dev
- * @LastEditTime: 2025-06-28 20:26:02
- * @FilePath: /base-lib/packages/ts-config/types/types.d.ts
- * @Description: ts常用类型模块
+ * @FileDesc: ts常用类型模块
  */
 
 /**

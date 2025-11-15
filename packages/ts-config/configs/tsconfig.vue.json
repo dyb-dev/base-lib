@@ -1,10 +1,5 @@
 /*
- * @Author: dyb-dev
- * @Date: 2024-08-30 15:10:37
- * @LastEditors: dyb-dev
- * @LastEditTime: 2024-08-30 15:35:20
- * @FilePath: /base-lib/packages/ts-config/tsconfig.vue.json
- * @Description: ts vue 配置
+ * @FileDesc: ts vue 配置
  */
 
 {

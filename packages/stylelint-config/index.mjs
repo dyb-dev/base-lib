@@ -1,10 +1,5 @@
 /*
- * @Author: dyb-dev
- * @Date: 2024-08-28 14:32:57
- * @LastEditors: dyb-dev
- * @LastEditTime: 2025-09-14 01:05:40
- * @FilePath: /base-lib/packages/stylelint-config/index.mjs
- * @Description: Stylelint 配置
+ * @FileDesc: Stylelint 配置
  */
 
 export default {

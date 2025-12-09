@@ -1,11 +1,10 @@
+/*
+ * @FileDesc: ts node 配置
+ */
 {
     "extends": "./tsconfig.base.json",
     "compilerOptions": {
         // 指定要包含的标准库
-        "lib": ["ESNext"],
-        // 指定使用 Node.js 16 模块系统，确保兼容 Node.js 16 及其模块解析方式。
-        "module": "node16",
-        // 使用 Node.js 16 的模块解析策略，确保模块导入时按照 Node.js 16 的方式解析。
-        "moduleResolution": "node16"
+        "lib": ["ESNext"]
     }
 }

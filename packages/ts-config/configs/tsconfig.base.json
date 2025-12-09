@@ -1,5 +1,5 @@
 /*
- * @FileDesc: ts基础配置
+ * @FileDesc: ts 基础配置
  */
 
 {
@@ -54,7 +54,7 @@
         // 检查 bind、call 和 apply 方法的参数是否与原始函数匹配
         "strictBindCallApply": true,
         // 检查在构造函数中声明但未设置的类属性
-        "strictPropertyInitialization": true,
+        "strictPropertyInitialization": false,
         // 'this' 被赋予 'any' 类型时报错
         "noImplicitThis": true,
         // 默认将 catch 子句变量设为 unknown 而不是 any

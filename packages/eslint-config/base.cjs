@@ -1,10 +1,9 @@
 /*
- * @FileDesc: Eslint 配置
+ * @FileDesc: Eslint 基础配置
  */
 
 module.exports = {
     root: true,
-
     env: {
         // 启用ES2021特性
         es2021: true,
@@ -15,7 +14,6 @@ module.exports = {
         // 适用于浏览器环境
         browser: true
     },
-
     overrides: [
         // #region CODE: eslint 基础配置
         {
@@ -268,74 +266,9 @@ module.exports = {
                 // 关闭强制导出函数返回类型的规则
                 "@typescript-eslint/explicit-module-boundary-types": "off",
                 // 扩展 eslint/no-redeclare 规则,增加对 TypeScript 函数重载和声明合并的支持
-                "@typescript-eslint/no-redeclare": ["error", { ignoreDeclarationMerge: true }]
-            }
-        },
-        // #endregion
-
-        // #region CODE: react 配置
-        {
-            files: ["**/*.js", "**/*.ts", "**/*.jsx", "**/*.tsx"],
-            extends: ["plugin:react-hooks/recommended"]
-        },
-        // #endregion
-
-        // #region CODE: vue 配置
-        {
-            files: ["**/*.vue"],
-            extends: ["plugin:vue/vue3-recommended"],
-            rules: {
-                // 强制组件使用emit事件名为 camelCase 或者 kebab-case 格式
-                "vue/custom-event-name-casing": ["error", "kebab-case"],
-                // 禁止使用组件事件时，例如驼峰形式：@componentsShowEvent，提示错误的规则
-                "vue/v-on-event-hyphenation": "off",
-                // 关闭禁止v-html指令的规则
-                "vue/no-v-html": "off",
-                // 关闭强制属性顺序的规则
-                "vue/attributes-order": "off",
-                // 关闭v-for指令必须使用:key的规则
-                "vue/require-v-for-key": "off",
-                // 关闭props默认值的强制规则
-                "vue/require-default-prop": "off",
-                // 关闭禁止未使用的组件的规则
-                "vue/no-unused-components": "error",
-                // 关闭组件名必须为多单词的规则
-                "vue/multi-word-component-names": "off",
-                // 关闭禁止在setup中解构props的规则
-                "vue/no-setup-props-destructure": "off",
-                // 关闭计算属性必须返回值的规则
-                "vue/return-in-computed-property": "off",
-                // 关闭单行元素必须换行符
-                "vue/singleline-html-element-content-newline": 0,
-                // 关闭多行元素必须换行符也是一样的
-                "vue/multiline-html-element-content-newline": 0,
-                // 要求每一行标签的最大属性不超五个
-                "vue/max-attributes-per-line": ["error", { singleline: 5 }],
-                // 要求html标签的缩进为需要4个空格
-                "vue/html-indent": [
-                    "error",
-                    4,
-                    {
-                        attribute: 1,
-                        baseIndent: 1,
-                        closeBracket: 0,
-                        alignAttributesVertically: true,
-                        ignores: []
-                    }
-                ],
-                // 取消关闭标签不能自闭合的限制设置
-                "vue/html-self-closing": [
-                    "error",
-                    {
-                        html: {
-                            void: "always",
-                            normal: "never",
-                            component: "always"
-                        },
-                        svg: "always",
-                        math: "always"
-                    }
-                ]
+                "@typescript-eslint/no-redeclare": ["error", { ignoreDeclarationMerge: true }],
+                // 强制类型导入使用 import type 语法
+                "@typescript-eslint/consistent-type-imports": "error"
             }
         },
         // #endregion
@@ -348,6 +281,13 @@ module.exports = {
                 // 缩进4个空格
                 "jsonc/indent": ["error", 4]
             }
+        },
+        // #endregion
+
+        // #region CODE: unocss 配置
+        {
+            files: ["**/*.vue", "**/*.jsx", "**/*.tsx"],
+            extends: ["@unocss"]
         }
         // #endregion
     ]

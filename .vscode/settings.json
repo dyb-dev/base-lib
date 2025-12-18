@@ -397,7 +397,8 @@
         "outfile",
         "premajor",
         "preminor",
-        "prepatch"
+        "prepatch",
+        "unocss"
     ],
 
     // #endregion

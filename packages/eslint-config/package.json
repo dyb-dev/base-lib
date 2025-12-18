@@ -1,19 +1,27 @@
 {
     "name": "@dyb-dev/eslint-config",
-    "version": "0.4.0",
+    "version": "1.0.0",
     "description": "Eslint 配置",
     "author": "dyb-dev",
     "license": "MIT",
     "type": "module",
     "private": false,
-    "main": "./index.cjs",
+    "main": "./base.cjs",
     "exports": {
         ".": {
-            "require": "./index.cjs"
+            "require": "./base.cjs"
+        },
+        "./vue": {
+            "require": "./vue.cjs"
+        },
+        "./react": {
+            "require": "./react.cjs"
         }
     },
     "files": [
-        "index.cjs",
+        "base.cjs",
+        "vue.cjs",
+        "react.cjs",
         "package.json",
         "README.md"
     ],
@@ -59,7 +67,7 @@
         "eslint-plugin-import": "^2.29.1",
         "eslint-plugin-jsdoc": "^48.2.3",
         "eslint-plugin-jsonc": "^2.15.1",
-        "eslint-plugin-react-hooks": "^5.1.0",
+        "eslint-plugin-react-hooks": "^7.0.1",
         "eslint-plugin-vue": "^9.25.0"
     },
     "peerDependencies": {

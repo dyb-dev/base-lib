@@ -281,13 +281,6 @@ module.exports = {
                 // 缩进4个空格
                 "jsonc/indent": ["error", 4]
             }
-        },
-        // #endregion
-
-        // #region CODE: unocss 配置
-        {
-            files: ["**/*.vue", "**/*.jsx", "**/*.tsx"],
-            extends: ["@unocss"]
         }
         // #endregion
     ]

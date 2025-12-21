@@ -1,6 +1,6 @@
 # @dyb-dev/eslint-config
 
-`@dyb-dev/eslint-config` 是一个全面的 ESLint 配置包，支持 JavaScript、TypeScript、Vue、React、Jsonc、JsDoc、UnoCSS 的格式化检查。此包旨在为你的项目提供统一和一致的编码风格。
+`@dyb-dev/eslint-config` 是一个全面的 ESLint 配置包，支持 JavaScript、TypeScript、Vue、React、Next、Jsonc、JsDoc 的格式化检查。此包旨在为你的项目提供统一和一致的编码风格。
 
 > ⚠️ 注意：此配置包只支持 CommonJS 规范，请确保你的 ESLint 配置文件遵循 CommonJS 规范。
 
@@ -8,11 +8,10 @@
 
 -   **JavaScript 格式化**: 支持对普通 JavaScript 文件的代码规范检查
 -   **TypeScript 格式化检查**: 确保你的 TypeScript 代码符合规范
--   **Vue 文件格式化**: 内置对 Vue 2/3 文件的支持，确保你的 Vue 组件代码风格统一
--   **React 文件格式化**: 内置对 React/TSX 文件的支持，包括 React Hooks 规则
+-   **Vue 文件格式化**: 内置对 Vue 3 文件的支持，确保你的 Vue 组件代码风格统一
+-   **React 文件格式化**: 内置对 React/TSX 文件的支持，包括 React Hooks & Next Core 规则
 -   **Jsonc 文件格式化**: 支持 JSON with Comments 格式的文件格式化
 -   **JsDoc 格式化**: 确保你的代码注释符合规范，提升代码可读性
--   **UnoCSS 支持**: 内置 UnoCSS ESLint 规则，确保原子化 CSS 的使用规范
 
 ## 环境
 
@@ -93,10 +92,29 @@ module.exports = {
 }
 ```
 
+### Next 项目
+
+如果你的项目使用 Next，请使用 Next 专用配置：
+
+```json
+{
+    "extends": ["@dyb-dev/eslint-config/next"]
+}
+```
+
+或在 `.eslintrc.cjs` 中：
+
+```js
+module.exports = {
+    extends: ["@dyb-dev/eslint-config/next"]
+}
+```
+
 ## 依赖说明
 
 此配置包已内置以下主要依赖，无需额外安装：
 
+-   `@next/eslint-plugin-next` - Next ESLint 插件
 -   `@typescript-eslint/eslint-plugin` - TypeScript ESLint 插件
 -   `@typescript-eslint/parser` - TypeScript 解析器
 -   `eslint-plugin-vue` - Vue ESLint 插件
@@ -104,7 +122,6 @@ module.exports = {
 -   `eslint-plugin-import` - Import/Export 规范插件
 -   `eslint-plugin-jsdoc` - JSDoc 注释规范插件
 -   `eslint-plugin-jsonc` - JSON/JSONC 格式化插件
--   `@unocss/eslint-config` - UnoCSS ESLint 配置
 
 ## 常见问题
 

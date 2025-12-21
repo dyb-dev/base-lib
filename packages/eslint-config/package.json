@@ -1,6 +1,6 @@
 {
     "name": "@dyb-dev/eslint-config",
-    "version": "1.0.0",
+    "version": "1.1.1",
     "description": "Eslint 配置",
     "author": "dyb-dev",
     "license": "MIT",
@@ -16,12 +16,16 @@
         },
         "./react": {
             "require": "./react.cjs"
+        },
+        "./next": {
+            "require": "./next.cjs"
         }
     },
     "files": [
         "base.cjs",
         "vue.cjs",
         "react.cjs",
+        "next.cjs",
         "package.json",
         "README.md"
     ],
@@ -50,6 +54,9 @@
         "eslint-config",
         "eslint-plugin",
         "eslint-config-prettier",
+        "eslint-config-vue",
+        "eslint-config-react",
+        "eslint-config-next",
         "prettier",
         "eslint-plugin-import",
         "eslint-plugin-vue",
@@ -60,9 +67,9 @@
         "typescript": "catalog:"
     },
     "dependencies": {
+        "@next/eslint-plugin-next": "^15.4.4",
         "@typescript-eslint/eslint-plugin": "^6.2.1",
         "@typescript-eslint/parser": "^6.2.1",
-        "@unocss/eslint-config": "^66.5.6",
         "eslint-import-resolver-typescript": "^3.6.1",
         "eslint-plugin-import": "^2.29.1",
         "eslint-plugin-jsdoc": "^48.2.3",

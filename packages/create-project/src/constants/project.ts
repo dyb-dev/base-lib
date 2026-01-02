@@ -2,7 +2,7 @@
  * @FileDesc: 项目模板相关常量
  */
 
-import prompts from "prompts"
+import type prompts from "prompts"
 
 /** CONST: 默认项目名称 */
 export const DEFAULT_PROJECT_NAME = "default-project"

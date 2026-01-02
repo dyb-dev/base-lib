@@ -1,6 +1,6 @@
 {
     "name": "base-lib",
-    "version": "0.10.0",
+    "version": "0.11.0",
     "description": "项目中常用的基础库",
     "author": "dyb-dev",
     "license": "MIT",
@@ -14,7 +14,8 @@
     "scripts": {
         "prepare": "husky",
         "postinstall": "pnpm -r run build",
-        "release": "project-cli release"
+        "release": "project-cli release",
+        "format": "prettier --write . && eslint --fix . && stylelint --fix . --allow-empty-input"
     },
     "devDependencies": {
         "@dyb-dev/eslint-config": "workspace:*",
@@ -24,9 +25,17 @@
         "@dyb-dev/ts-config": "workspace:*",
         "eslint": "catalog:",
         "husky": "^9.1.6",
+        "lint-staged": "^16.2.7",
         "prettier": "catalog:",
         "prettier-eslint": "^16.3.0",
         "stylelint": "catalog:",
         "typescript": "catalog:"
+    },
+    "lint-staged": {
+        "*": [
+            "prettier --write",
+            "eslint --fix",
+            "stylelint --fix --allow-empty-input"
+        ]
     }
 }

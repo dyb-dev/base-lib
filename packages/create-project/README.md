@@ -32,15 +32,16 @@ pnpm create @dyb-dev/create-project@latest my-project --force
 
 当前支持的项目模板列表如下：
 
-| 项目模板                                                                        | 描述                                            |
-| ------------------------------------------------------------------------------- | ----------------------------------------------- |
-| [**next-ssr-web-template**](https://github.com/dyb-dev/next-ssr-web-template)   | 基于`Next.js`搭建的 SSR Web 模板                |
-| [**react-web-template**](https://github.com/dyb-dev/react-web-template)         | 基于`react全家桶`搭建的Web移动端模板            |
-| [**vue-web-template**](https://github.com/dyb-dev/vue-web-template)             | 基于`vue3全家桶`搭建的Web移动端模板             |
-| [**uniapp-mp-wx-template**](https://github.com/dyb-dev/uniapp-mp-wx-template)   | 基于 `uni-app + vue3 + ts` 搭建的微信小程序模板 |
-| [**fn-lib-template**](https://github.com/dyb-dev/fn-lib-template)               | 基于 `vite` 搭建的 TS 函数库模版                |
-| [**component-lib-template**](https://github.com/dyb-dev/component-lib-template) | 基于 `vite` 搭建的 vue3 + ts 组件库模版         |
-| [**lib-docs-template**](https://github.com/dyb-dev/lib-docs-template)           | 基于 `vitepress` 搭建的库文档模板               |
+| 项目模板                                                                        | 描述                                          |
+| ------------------------------------------------------------------------------- | --------------------------------------------- |
+| [**nest-server-template**](https://github.com/dyb-dev/nest-server-template)     | 基于`nest全家桶`搭建的服务端模板              |
+| [**react-web-template**](https://github.com/dyb-dev/react-web-template)         | 基于`react全家桶`搭建的Web移动端模板          |
+| [**next-ssr-web-template**](https://github.com/dyb-dev/next-ssr-web-template)   | 基于`Next.js`搭建的 SSR Web 模板              |
+| [**vue-web-template**](https://github.com/dyb-dev/vue-web-template)             | 基于`vue3全家桶`搭建的Web移动端模板           |
+| [**uniapp-mp-wx-template**](https://github.com/dyb-dev/uniapp-mp-wx-template)   | 基于`uni-app + vue3 + ts`搭建的微信小程序模板 |
+| [**fn-lib-template**](https://github.com/dyb-dev/fn-lib-template)               | 基于`vite`搭建的TS函数库模版                  |
+| [**component-lib-template**](https://github.com/dyb-dev/component-lib-template) | 基于`vite`搭建的vue3+ts组件库模版             |
+| [**lib-docs-template**](https://github.com/dyb-dev/lib-docs-template)           | 基于`vitepress`搭建的库文档模板               |
 
 ## 贡献指南
 

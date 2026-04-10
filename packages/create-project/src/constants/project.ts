@@ -10,14 +10,19 @@ export const DEFAULT_PROJECT_NAME = "default-project"
 /** CONST: 项目模板列表 */
 export const PROJECT_TEMPLATE_LIST = [
     {
-        title: "next-ssr-web-template",
-        description: "基于`Next.js`搭建的 SSR Web 模板",
-        value: "https://github.com/dyb-dev/next-ssr-web-template.git"
+        title: "nest-server-template",
+        description: "基于`nest全家桶`搭建的服务端模板",
+        value: "https://github.com/dyb-dev/nest-server-template.git"
     },
     {
         title: "react-web-template",
         description: "基于`react全家桶`搭建的Web移动端模板",
         value: "https://github.com/dyb-dev/react-web-template.git"
+    },
+    {
+        title: "next-ssr-web-template",
+        description: "基于`Next.js`搭建的 SSR Web 模板",
+        value: "https://github.com/dyb-dev/next-ssr-web-template.git"
     },
     {
         title: "vue-web-template",

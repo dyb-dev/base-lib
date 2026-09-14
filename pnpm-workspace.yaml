@@ -5,6 +5,7 @@ packages:
 # 公共包
 catalog:
     eslint: ^8.57.0
+    markdownlint-cli2: ^0.23.2
     prettier: ^3.3.3
     stylelint: ^16.25.0
     typescript: ^5.4.5

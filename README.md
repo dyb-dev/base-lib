@@ -1,24 +1,25 @@
 # base-lib
 
-`base-lib` 是项目中常用的基础库，旨在提供项目中常用的配置和工具，包括 ESLint、Prettier、Stylelint、TypeScript 配置等。该库利用了 pnpm 工作空间进行管理，多个子包共享依赖并进行版本管理。
+`base-lib` 是项目中常用的基础库，旨在提供项目中常用的配置和工具，包括 ESLint、Prettier、Stylelint、Markdownlint、TypeScript 配置等。该库利用了 pnpm 工作空间进行管理，多个子包共享依赖并进行版本管理。
 
 ## 环境要求
 
--   **Node.js**: `>=18.0.0`
--   **pnpm**: `>=9.0.0`
+- **Node.js**: `>=18.0.0`
+- **pnpm**: `>=9.0.0`
 
 ## 子包信息
 
 此项目包含以下子包:
 
-| 子包名称                                            | 描述                             |
-| --------------------------------------------------- | -------------------------------- |
-| [**create-project**](./packages/create-project)     | 快速构建项目的脚手架工具         |
-| [**project-cli**](./packages/project-cli)           | 项目中常用操作的自动化脚手架工具 |
-| [**eslint-config**](./packages/eslint-config)       | 自定义 ESLint 配置               |
-| [**prettier-config**](./packages/prettier-config)   | 自定义 Prettier 配置             |
-| [**stylelint-config**](./packages/stylelint-config) | 自定义 Stylelint 配置            |
-| [**ts-config**](./packages/ts-config)               | 自定义 TypeScript 配置           |
+| 子包名称 | 描述 |
+| --------------------------------------------------------- | ------------------- |
+| [**create-project**](./packages/create-project) | 快速构建项目的脚手架工具 |
+| [**project-cli**](./packages/project-cli) | 项目中常用操作的自动化脚手架工具 |
+| [**eslint-config**](./packages/eslint-config) | 自定义 ESLint 配置 |
+| [**prettier-config**](./packages/prettier-config) | 自定义 Prettier 配置 |
+| [**stylelint-config**](./packages/stylelint-config) | 自定义 Stylelint 配置 |
+| [**markdownlint-config**](./packages/markdownlint-config) | 自定义 Markdownlint 配置 |
+| [**ts-config**](./packages/ts-config) | 自定义 TypeScript 配置 |
 
 ## 安装
 
@@ -45,7 +46,7 @@ pnpm install
 
 如果您发现任何问题或希望贡献代码，请提交 issue 或 pull request 到 GitHub 仓库：
 
--   [GitHub 仓库](https://github.com/dyb-dev/base-lib)
+- [GitHub 仓库](https://github.com/dyb-dev/base-lib)
 
 ## 许可证
 

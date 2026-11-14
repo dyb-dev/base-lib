@@ -2,7 +2,7 @@
  * @FileDesc: Eslint Next 配置
  */
 
-/** CONST: react 配置 */
+/** react 配置 */
 const reactConfig = require("./react.cjs")
 
 module.exports = {

@@ -2,7 +2,7 @@
  * @FileDesc: Eslint React 配置
  */
 
-/** CONST: 基础配置 */
+/** 基础配置 */
 const baseConfig = require("./base.cjs")
 
 module.exports = {

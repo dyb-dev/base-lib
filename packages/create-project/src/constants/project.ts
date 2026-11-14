@@ -4,10 +4,10 @@
 
 import type prompts from "prompts"
 
-/** CONST: 默认项目名称 */
+/** 默认项目名称 */
 export const DEFAULT_PROJECT_NAME = "default-project"
 
-/** CONST: 项目模板列表 */
+/** 项目模板列表 */
 export const PROJECT_TEMPLATE_LIST = [
     {
         title: "nest-server-template",
